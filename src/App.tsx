@@ -1,10 +1,16 @@
-import React from "react";
-import "./globalStyles.css";
+import React from 'react';
+import './globalStyles.css';
 
-import Dashboard from "./views/Dashboard";
+import Dashboard from './views/Dashboard';
+import NavBar from './views/NavBar';
 
-const App = () => {
-  return <Dashboard />;
+const App: React.FC = () => {
+  return (
+    <>
+      <NavBar />
+      <Dashboard />
+    </>
+  );
 };
 
 export default App;
