@@ -1,14 +1,18 @@
 import React from 'react';
 import './globalStyles.css';
 
-import Dashboard from './views/Dashboard';
 import NavBar from './views/NavBar';
+import Header from './views/Header';
+import Body from './views/Body';
+import Footer from './views/Footer';
 
 const App: React.FC = () => {
   return (
     <>
       <NavBar />
-      <Dashboard />
+      <Header />
+      <Body />
+      <Footer />
     </>
   );
 };
