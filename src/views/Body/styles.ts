@@ -24,8 +24,8 @@ export const Content = styled.div`
   display: flex;
   background: #f1f1f1;
   width: 100%;
-  height: 100vh;
-  max-height: 720px;
+  /* height: 100vh; */
+  min-height: 720px;
   max-width: 1080px;
   border-radius: 13rem 0.2rem;
   -webkit-box-shadow: 1px 4px 28px -5px #000000;
@@ -37,7 +37,7 @@ export const Content = styled.div`
 
 export const PresentationText = styled.p`
   font-size: 24px;
-  max-width: 600px;
+  min-width: 600px;
 
   div {
     margin-bottom: 1.6rem;

@@ -50,7 +50,7 @@ export const Github = styled.a`
   margin-top: 0.4rem;
   p {
     margin: 0;
-
+    margin-right: 0.4rem;
     color: #f1f1f1;
     font-weight: 700;
   }

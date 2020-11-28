@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
           </SocialMedia>
           <Whatsapp href="/#" target="blank">
             <FaWhatsapp size="1.4rem" color="#FF66C3" />
-            <p>+55 (31) 9782-9448</p>
+            <p>+55 (31) 98491-2135</p>
           </Whatsapp>
         </Contacts>
 
