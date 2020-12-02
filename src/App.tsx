@@ -3,7 +3,8 @@ import './globalStyles.css';
 
 import NavBar from './views/NavBar';
 import Header from './views/Header';
-import Body from './views/Body';
+import About from './views/About';
+import Adopted from './views/Adopted';
 import Footer from './views/Footer';
 
 const App: React.FC = () => {
@@ -11,7 +12,8 @@ const App: React.FC = () => {
     <>
       <NavBar />
       <Header />
-      <Body />
+      {/* <About /> */}
+      <Adopted />
       <Footer />
     </>
   );
