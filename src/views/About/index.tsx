@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
-import api from '../../services/api';
-
-import userTestToken from '../../credentials';
+import React from 'react';
 
 import {
   Container,
@@ -10,13 +6,6 @@ import {
   Content,
   PresentationText,
 } from './styles';
-
-interface IAngels {
-  id: string;
-  caption: string;
-  // eslint-disable-next-line camelcase
-  media_url: string;
-}
 
 const About: React.FC = () => {
   return (
