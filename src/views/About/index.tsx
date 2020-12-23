@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import api from '../../services/api';
 
-import { userTestToken } from '../../credentials';
+import userTestToken from '../../credentials';
 
 import {
   Container,
