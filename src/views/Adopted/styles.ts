@@ -41,6 +41,10 @@ export const AngelPhoto = styled.img`
   width: 20rem;
   margin-top: 2rem;
   border-radius: 3rem 0.2rem;
-  -webkit-box-shadow: 1px 4px 28px -5px #000000;
-  box-shadow: 1px 4px 28px -5px #000000;
+  transition: 0.3s;
+
+  &:hover {
+    -webkit-box-shadow: 1px 4px 28px -5px #000000;
+    box-shadow: 1px 4px 28px -5px #000000;
+  }
 `;

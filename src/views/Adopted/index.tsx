@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { Console } from 'console';
 import api from '../../services/api';
 
 import userTestToken from '../../credentials';
@@ -15,6 +16,7 @@ interface IAngels {
 
 const Adopted: React.FC = () => {
   const [angelsList, setAngelsLIst] = useState<IAngels[]>();
+  const [adoptedList, setAdoptedList] = useState<IAngels[]>();
 
   const getAngels = async (): Promise<void> => {
     const catalog = await api.get(
@@ -22,11 +24,30 @@ const Adopted: React.FC = () => {
     );
 
     setAngelsLIst(catalog.data.data);
+    getAdopted();
+  };
+
+  const getAdopted = async (): Promise<void> => {
+    const adopted = await angelsList?.map(angel => {
+      const vars = angel.caption.split(' ');
+
+      if (vars.includes('ADOTADO')) return angel;
+
+      return 0;
+    });
+
+    console.log(adopted);
+
+    const result = adopted?.filter(element => element !== 0);
+
+    console.log(result);
   };
 
   useEffect(() => {
     getAngels();
   }, []);
+
+  console.log(adoptedList);
 
   return (
     <Container>
