@@ -36,24 +36,29 @@ const Adopted: React.FC = () => {
       return 0;
     });
 
-    console.log(adopted);
+    // console.log(adopted);
 
     const result = adopted?.filter(element => element !== 0);
 
-    console.log(result);
+    if (adoptedList)
+      result?.forEach(element => {
+        if (element !== 0) setAdoptedList([...adoptedList, element]);
+      });
+
+    // console.log(result);
   };
+
+  console.log(adoptedList);
 
   useEffect(() => {
     getAngels();
   }, []);
 
-  console.log(adoptedList);
-
   return (
     <Container>
       <PaperTransparent>
         <Content>
-          {angelsList?.map(angel => {
+          {adoptedList?.map(angel => {
             return (
               <AngelPhoto key={angel.id} src={angel.media_url} alt="Teste" />
             );
