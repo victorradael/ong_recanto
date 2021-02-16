@@ -17,9 +17,13 @@ export const NavContainer = styled.nav`
     justify-content: space-between;
     padding: 0.8rem;
 
-    a {
+    button {
       text-decoration: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
       color: #f1f1f1;
+      font-size: 1rem;
       font-weight: 700;
       transition: 0.2s;
 

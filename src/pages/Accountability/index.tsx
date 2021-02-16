@@ -14,7 +14,7 @@ interface IAngels {
 const Adopted: React.FC = () => {
   return (
     <Layout>
-      <h1>Adopted</h1>
+      <h1>Accountability</h1>
     </Layout>
   );
 };

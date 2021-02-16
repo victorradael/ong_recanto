@@ -1,16 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './globalStyles.css';
 
-import About from './pages/About';
-import Adopted from './pages/Adopted';
+import Router from './router';
 
 const App: React.FC = () => {
-  return (
-    <>
-      {/* <About /> */}
-      <Adopted />
-    </>
-  );
+  return <Router />;
 };
 
 export default App;
