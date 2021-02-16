@@ -1,20 +1,14 @@
 import React from 'react';
 import './globalStyles.css';
 
-import NavBar from './views/NavBar';
-import Header from './views/Header';
-import About from './views/About';
-import Adopted from './views/Adopted';
-import Footer from './views/Footer';
+import About from './pages/About';
+import Adopted from './pages/Adopted';
 
 const App: React.FC = () => {
   return (
     <>
-      <NavBar />
-      <Header />
       {/* <About /> */}
       <Adopted />
-      <Footer />
     </>
   );
 };

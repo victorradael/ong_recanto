@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { Console } from 'console';
 import api from '../../services/api';
-
+import Layout from '../../components/Layout';
 import userTestToken from '../../credentials';
 
 import { Container, PaperTransparent, Content, AngelPhoto } from './styles';
@@ -54,19 +53,7 @@ const Adopted: React.FC = () => {
     getAngels();
   }, []);
 
-  return (
-    <Container>
-      <PaperTransparent>
-        <Content>
-          {adoptedList?.map(angel => {
-            return (
-              <AngelPhoto key={angel.id} src={angel.media_url} alt="Teste" />
-            );
-          })}
-        </Content>
-      </PaperTransparent>
-    </Container>
-  );
+  return <Layout />;
 };
 
 export default Adopted;
