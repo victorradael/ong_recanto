@@ -1,7 +1,19 @@
 import React from 'react';
 
-const Layout: React.FC = () => {
-  return <h1>Hello</h1>;
+import NavBar from './NavBar';
+import Header from './Header';
+import ContentBody from './ContentBody';
+import Footer from './Footer';
+
+const Layout: React.FC = ({ children }) => {
+  return (
+    <>
+      <NavBar />
+      <Header />
+      <ContentBody content={children} />
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;

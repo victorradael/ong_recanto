@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-import { Container, PaperTransparent, Content, AngelPhoto } from './styles';
+import { Container, PaperTransparent, Content } from './styles';
 
-const ContentBody = () => {
+interface IContent {
+  content: ReactNode;
+}
+
+const ContentBody: React.FC<IContent> = ({ content }) => {
   return (
     <Container>
       <PaperTransparent>
-        <Content />
+        <Content>{content}</Content>
       </PaperTransparent>
     </Container>
   );
