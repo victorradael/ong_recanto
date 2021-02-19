@@ -21,11 +21,9 @@ export const PaperTransparent = styled.div`
 `;
 
 export const Content = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   background: #f1f1f1;
   width: 100%;
-  /* height: 100vh; */
   min-height: 720px;
   max-width: 1080px;
   border-radius: 13rem 0.2rem;
