@@ -1,15 +1,22 @@
 import styled from 'styled-components';
+import { pixelToViewWidth } from '../../utils/pixelToViewWidth';
+import theme from '../../utils/theme';
 
 export const NavContainer = styled.nav`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin: ${pixelToViewWidth(32)}; */
+  max-width: 100%;
+
+  @media (min-width: 1024px) {
+    flex-wrap: nowrap;
+  }
   padding-top: 1rem;
   display: flex;
-
-  background: #7ec2ff;
-
+  background: ${theme.colors.primary};
   width: 100%;
-
   justify-content: center;
-
   div {
     width: 100%;
     max-width: 1080px;
@@ -22,13 +29,13 @@ export const NavContainer = styled.nav`
       background: transparent;
       border: none;
       cursor: pointer;
-      color: #f1f1f1;
+      color: ${theme.colors.whiteText};
       font-size: 1rem;
       font-weight: 700;
       transition: 0.2s;
 
       &:hover {
-        color: #ffd0ec;
+        color: ${theme.colors.secondaryLight};
       }
     }
   }
