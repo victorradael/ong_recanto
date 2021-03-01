@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-import api from '../../services/api';
+import styled from 'styled-components';
+// import api from '../../services/api';
 import Layout from '../../components/Layout';
-import userTestToken from '../../credentials';
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  justify-content: top;
+  align-items: center;
+`;
 
 interface IAngels {
   id: string;
@@ -14,7 +23,10 @@ interface IAngels {
 const Adopted: React.FC = () => {
   return (
     <Layout>
-      <h1>Adopted</h1>
+      <Content>
+        <h1>EM DESENVOLVIMENTO</h1>
+        <p>Pagina responsável por exibir os animais adotados.</p>
+      </Content>
     </Layout>
   );
 };
