@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-import api from '../../services/api';
+import styled from 'styled-components';
+// import api from '../../services/api';
 import Layout from '../../components/Layout';
-import userTestToken from '../../credentials';
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  justify-content: top;
+  align-items: center;
+`;
 
 interface IAngels {
   id: string;
@@ -11,12 +20,15 @@ interface IAngels {
   media_url: string;
 }
 
-const Adopted: React.FC = () => {
+const HowToHelp: React.FC = () => {
   return (
     <Layout>
-      <h1>HowToHelp</h1>
+      <Content>
+        <h1>EM DESENVOLVIMENTO</h1>
+        <p>Pagina responsável por exibir as maneiras de ajudar.</p>
+      </Content>
     </Layout>
   );
 };
 
-export default Adopted;
+export default HowToHelp;

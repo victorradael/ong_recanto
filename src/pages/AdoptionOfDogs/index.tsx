@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-import api from '../../services/api';
+import styled from 'styled-components';
+// import api from '../../services/api';
 import Layout from '../../components/Layout';
-import userTestToken from '../../credentials';
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  justify-content: top;
+  align-items: center;
+`;
 
 interface IAngels {
   id: string;
@@ -11,12 +20,15 @@ interface IAngels {
   media_url: string;
 }
 
-const Adopted: React.FC = () => {
+const AdoptionOfDogs: React.FC = () => {
   return (
     <Layout>
-      <h1>AdoptionOfDogs</h1>
+      <Content>
+        <h1>EM DESENVOLVIMENTO</h1>
+        <p>Pagina responsável por exibir os cães para adoção.</p>
+      </Content>
     </Layout>
   );
 };
 
-export default Adopted;
+export default AdoptionOfDogs;
