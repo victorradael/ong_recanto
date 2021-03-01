@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from 'react';
+import React, { useState } from 'react';
 import './globalStyles.css';
 
 import NavBar from './components/NavBar';
