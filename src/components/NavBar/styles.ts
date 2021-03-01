@@ -4,8 +4,7 @@ export const NavContainer = styled.nav`
   padding-top: 1rem;
   display: flex;
 
-  /* background: #7ec2ff; */
-  background: #000;
+  background: #7ec2ff;
 
   width: 100%;
 
