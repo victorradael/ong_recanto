@@ -6,17 +6,14 @@ export const NavContainer = styled.nav`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* margin: ${pixelToViewWidth(32)}; */
   max-width: 100%;
 
-  @media (min-width: 1024px) {
-    flex-wrap: nowrap;
-  }
   padding-top: 1rem;
   display: flex;
   background: ${theme.colors.primary};
   width: 100%;
   justify-content: center;
+
   div {
     width: 100%;
     max-width: 1080px;
@@ -30,13 +27,28 @@ export const NavContainer = styled.nav`
       border: none;
       cursor: pointer;
       color: ${theme.colors.whiteText};
-      font-size: 1rem;
+      text-align: center;
       font-weight: 700;
       transition: 0.2s;
+
+      @media (max-width: 1080px) {
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 980px) {
+        font-size: 0.7rem;
+      }
 
       &:hover {
         color: ${theme.colors.secondaryLight};
       }
+    }
+
+    transition: 0.3s;
+    @media (max-width: 660px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: 0.2rem;
     }
   }
 `;
