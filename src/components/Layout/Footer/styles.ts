@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import theme from '../../../utils/theme';
 
 export const Container = styled.footer`
-  background: #7ec2ff;
+  background: ${theme.colors.primary};
   height: 8rem;
   display: flex;
 
@@ -38,7 +39,7 @@ export const Whatsapp = styled.a`
   p {
     margin: 0;
     margin-left: 0.4rem;
-    color: #f1f1f1;
+    color: ${theme.colors.whiteText};
     font-weight: 700;
   }
 `;
@@ -51,7 +52,7 @@ export const Github = styled.a`
   p {
     margin: 0;
     margin-right: 0.4rem;
-    color: #f1f1f1;
+    color: ${theme.colors.whiteText};
     font-weight: 700;
   }
 `;

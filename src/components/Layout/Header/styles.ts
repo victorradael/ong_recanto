@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import theme from '../../../utils/theme';
 
 export const Container = styled.header`
   display: flex;
-  background: #7ec2ff;
+  background: ${theme.colors.primary};
   width: 100%;
   height: 18rem;
   justify-content: center;
@@ -21,7 +22,7 @@ export const TopBar = styled.div`
     left: 22rem;
     font-weight: 400;
 
-    color: #f1f1f1;
+    color: ${theme.colors.whiteText};
   }
 `;
 
