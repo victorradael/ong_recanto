@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import background from '../../../assets/background.png';
+import theme from '../../../utils/theme';
 
 export const Container = styled.div`
   width: 100%;
@@ -11,8 +12,7 @@ export const Container = styled.div`
 export const PaperTransparent = styled.div`
   display: flex;
   width: 100%;
-
-  background: rgba(253, 11, 158, 0.5);
+  background: ${theme.colors.secondaryBackgroundGlass};
   padding: 0.8rem;
   justify-content: center;
   overflow: hidden;
@@ -22,7 +22,7 @@ export const PaperTransparent = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  background: #f1f1f1;
+  background: ${theme.colors.whiteText};
   width: 100%;
   min-height: 720px;
   max-width: 1080px;

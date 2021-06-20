@@ -1,13 +1,17 @@
 import styled from 'styled-components';
+import { pixelToViewWidth } from '../../utils/pixelToViewWidth';
+import theme from '../../utils/theme';
 
 export const NavContainer = styled.nav`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+
   padding-top: 1rem;
   display: flex;
-
-  background: #7ec2ff;
-
+  background: ${theme.colors.primary};
   width: 100%;
-
   justify-content: center;
 
   div {
@@ -22,14 +26,29 @@ export const NavContainer = styled.nav`
       background: transparent;
       border: none;
       cursor: pointer;
-      color: #f1f1f1;
-      font-size: 1rem;
+      color: ${theme.colors.whiteText};
+      text-align: center;
       font-weight: 700;
       transition: 0.2s;
 
-      &:hover {
-        color: #ffd0ec;
+      @media (max-width: 1080px) {
+        font-size: 0.8rem;
       }
+
+      @media (max-width: 980px) {
+        font-size: 0.7rem;
+      }
+
+      &:hover {
+        color: ${theme.colors.secondaryLight};
+      }
+    }
+
+    transition: 0.3s;
+    @media (max-width: 660px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: 0.2rem;
     }
   }
 `;
