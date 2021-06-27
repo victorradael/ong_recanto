@@ -4,7 +4,7 @@ import theme from '../../../utils/theme';
 
 export const Container = styled.div`
   width: 100%;
-
+  display: flex;
   background-image: url(${background});
   overflow: hidden;
 `;
@@ -13,11 +13,12 @@ export const PaperTransparent = styled.div`
   display: flex;
   width: 100%;
   background: ${theme.colors.secondaryBackgroundGlass};
-  padding: 0.8rem;
+  padding: 3rem;
   justify-content: center;
   overflow: hidden;
-  -webkit-box-shadow: inset -1px 0px 28px 5px rgba(0, 0, 0, 0.6);
-  box-shadow: inset -1px 0px 28px 5px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: inset 2px -1px 90px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 2px -1px 90px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 2px -1px 90px -9px rgba(0, 0, 0, 0.75);
 `;
 
 export const Content = styled.div`
@@ -26,11 +27,11 @@ export const Content = styled.div`
   width: 100%;
   min-height: 720px;
   max-width: 1080px;
-  border-radius: 13rem 0.2rem;
+  border-radius: 1rem;
   -webkit-box-shadow: 1px 4px 28px -5px #000000;
   box-shadow: 1px 4px 28px -5px #000000;
   justify-content: center;
   align-items: center;
 
-  padding: 8rem 1.6rem 1.6rem 1.6rem;
+  padding: 1rem;
 `;

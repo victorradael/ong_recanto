@@ -3,3 +3,24 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff66c3 #7ec2ff;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #7ec2ff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ff66c3;
+  border-radius: 20px;
+  border: 3px solid #7ec2ff;
+}
