@@ -3,8 +3,9 @@ import background from '../../../assets/background.png';
 import theme from '../../../utils/theme';
 
 export const Container = styled.div`
-  width: 100%;
   display: flex;
+  width: 100%;
+  min-height: 100%;
   background-image: url(${background});
   overflow: hidden;
 `;
@@ -25,7 +26,7 @@ export const Content = styled.div`
   display: flex;
   background: ${theme.colors.whiteText};
   width: 100%;
-  min-height: 720px;
+  min-height: 100vh;
   max-width: 1080px;
   border-radius: 1rem;
   -webkit-box-shadow: 1px 4px 28px -5px #000000;
