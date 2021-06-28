@@ -7,6 +7,18 @@ export const Content = styled.div`
   min-height: 100%;
   justify-content: top;
   align-items: center;
+  padding: 2rem 0;
+`;
+
+export const Text = styled.section`
+  padding: 6rem 14rem 3rem;
+  font-size: 18px;
+
+  p {
+    margin: 0;
+    line-height: 28px;
+    margin-bottom: 0.6rem;
+  }
 `;
 
 export const Options = styled.div`

@@ -12,10 +12,13 @@ import {
   Container,
   Content,
   Contacts,
-  SocialMedia,
   Whatsapp,
+  Instagram,
+  Facebook,
   Github,
   Email,
+  Twitter,
+  CopyRight,
 } from './styles';
 
 const Footer: React.FC = () => {
@@ -31,36 +34,37 @@ const Footer: React.FC = () => {
       <Content>
         <Contacts>
           <Email href="mailto:ongrecantodosanimais@gmail.com" target="_blank">
-            <FaMailBulk size="1.4rem" color="#FF66C3" />
-            <p>ongrecantodosanimais@gmail.com</p>
+            <FaMailBulk size="2rem" />
           </Email>
-          <SocialMedia>
-            <a
-              href="https://www.instagram.com/ong.recanto/?hl=pt-br"
-              target="blank"
-            >
-              <FaInstagram size="2rem" color="#FF66C3" />
-            </a>
-            <a
-              href="https://www.facebook.com/recantodosanimaisourobranco"
-              target="blank"
-            >
-              <FaFacebookSquare size="2rem" color="#FF66C3" />
-            </a>
-            <a href="https://twitter.com/ongrecanto" target="blank">
-              <FaTwitter size="2rem" color="#FF66C3" />
-            </a>
-          </SocialMedia>
+
+          <Instagram
+            href="https://www.instagram.com/ong.recanto/?hl=pt-br"
+            target="blank"
+          >
+            <FaInstagram size="2rem" />
+          </Instagram>
+          <Facebook
+            href="https://www.facebook.com/recantodosanimaisourobranco"
+            target="blank"
+          >
+            <FaFacebookSquare size="2rem" />
+          </Facebook>
+          <Twitter href="https://twitter.com/ongrecanto" target="blank">
+            <FaTwitter size="2rem" />
+          </Twitter>
 
           <Whatsapp href="/#" onClick={() => openWhatsappChat()} target="blank">
-            <FaWhatsapp size="3rem" color="#FF66C3" />
+            <FaWhatsapp size="2rem" />
           </Whatsapp>
         </Contacts>
 
         <Github href="https://github.com/victorradael" target="blank">
           <p>Desenvolvido por Victor Radael</p>
-          <FaGithub size="1.2rem" color="#fff" />
+          <FaGithub size="1.2rem" />
         </Github>
+        <CopyRight color="#fff">
+          &copy; Copyright 2021 ONG Recanto dos Animais.
+        </CopyRight>
       </Content>
     </Container>
   );
