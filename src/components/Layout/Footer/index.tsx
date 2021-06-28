@@ -34,33 +34,33 @@ const Footer: React.FC = () => {
       <Content>
         <Contacts>
           <Email href="mailto:ongrecantodosanimais@gmail.com" target="_blank">
-            <FaMailBulk size="2rem" color="#FF66C3" />
+            <FaMailBulk size="2rem" />
           </Email>
 
           <Instagram
             href="https://www.instagram.com/ong.recanto/?hl=pt-br"
             target="blank"
           >
-            <FaInstagram size="2rem" color="#FF66C3" />
+            <FaInstagram size="2rem" />
           </Instagram>
           <Facebook
             href="https://www.facebook.com/recantodosanimaisourobranco"
             target="blank"
           >
-            <FaFacebookSquare size="2rem" color="#FF66C3" />
+            <FaFacebookSquare size="2rem" />
           </Facebook>
           <Twitter href="https://twitter.com/ongrecanto" target="blank">
-            <FaTwitter size="2rem" color="#FF66C3" />
+            <FaTwitter size="2rem" />
           </Twitter>
 
           <Whatsapp href="/#" onClick={() => openWhatsappChat()} target="blank">
-            <FaWhatsapp size="2rem" color="#FF66C3" />
+            <FaWhatsapp size="2rem" />
           </Whatsapp>
         </Contacts>
 
         <Github href="https://github.com/victorradael" target="blank">
           <p>Desenvolvido por Victor Radael</p>
-          <FaGithub size="1.2rem" color="#fff" />
+          <FaGithub size="1.2rem" />
         </Github>
         <CopyRight color="#fff">
           &copy; Copyright 2021 ONG Recanto dos Animais.

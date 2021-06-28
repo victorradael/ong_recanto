@@ -9,12 +9,11 @@ export const Container = styled.footer`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 2rem 0 0.3rem 0;
+  padding: 4rem 0 0.3rem 0;
 `;
 
 export const Content = styled.div`
   width: 100%;
-  height: 100%;
   max-width: 1080px;
   display: flex;
   flex-direction: column;
@@ -43,6 +42,19 @@ export const Whatsapp = styled.a`
   margin-top: 0.8rem;
   padding: 0.2rem;
   border-radius: 50% 50% 50% 0.4rem;
+
+  svg {
+    color: ${theme.colors.secondary};
+  }
+
+  transition: 0.5s;
+
+  &:hover {
+    background: ${theme.colors.secondary};
+    svg {
+      color: ${theme.colors.whiteText};
+    }
+  }
 `;
 
 export const Instagram = styled.a`
@@ -56,6 +68,19 @@ export const Instagram = styled.a`
   margin-top: 0.8rem;
   padding: 0.2rem;
   border-radius: 0.4rem;
+
+  svg {
+    color: ${theme.colors.secondary};
+  }
+
+  transition: 0.5s;
+
+  &:hover {
+    background: ${theme.colors.secondary};
+    svg {
+      color: ${theme.colors.whiteText};
+    }
+  }
 `;
 
 export const Facebook = styled.a`
@@ -69,6 +94,19 @@ export const Facebook = styled.a`
   margin-top: 0.8rem;
   padding: 0.2rem;
   border-radius: 0.4rem;
+
+  svg {
+    color: ${theme.colors.secondary};
+  }
+
+  transition: 0.5s;
+
+  &:hover {
+    background: ${theme.colors.secondary};
+    svg {
+      color: ${theme.colors.whiteText};
+    }
+  }
 `;
 
 export const Email = styled.a`
@@ -81,6 +119,19 @@ export const Email = styled.a`
   box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
   padding: 0.2rem;
   border-radius: 0.4rem;
+
+  svg {
+    color: ${theme.colors.secondary};
+  }
+
+  transition: 0.5s;
+
+  &:hover {
+    background: ${theme.colors.secondary};
+    svg {
+      color: ${theme.colors.whiteText};
+    }
+  }
 `;
 
 export const Twitter = styled.a`
@@ -94,34 +145,52 @@ export const Twitter = styled.a`
   margin-top: 0.8rem;
   padding: 0.2rem;
   border-radius: 0.4rem 30% 70% 0.4rem;
+
+  svg {
+    color: ${theme.colors.secondary};
+  }
+
+  transition: 0.5s;
+
+  &:hover {
+    background: ${theme.colors.secondary};
+    svg {
+      color: ${theme.colors.whiteText};
+    }
+  }
 `;
 
 export const Github = styled.a`
   position: absolute;
-
-  left: 1rem;
+  align: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background: #000;
   padding: 0.3rem 1rem;
   border-radius: 0.5rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 4rem;
+  color: ${theme.colors.whiteText};
   p {
     margin: 0;
     margin-right: 0.4rem;
-    color: ${theme.colors.whiteText};
     font-weight: 700;
-    display: none;
+    max-width: 0rem;
+    max-height: 0rem;
+    overflow: hidden;
+    transition: max-width 1s ease-in-out;
   }
 
-  transition: max-height 1s ease-out;
+  transition: color 1s;
 
   &:hover {
     p {
-      display: inline;
+      max-width: 20rem;
+      max-height: 1rem;
+      pointer-events: none;
     }
+
+    color: #000;
   }
 `;
 
