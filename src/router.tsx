@@ -79,7 +79,7 @@ const Router: React.FC = () => {
           <button type="button" onClick={() => visibleAbout()}>
             SOBRE NÓS
           </button>
-          <button type="button" onClick={() => visibleAdoptionOfDogs()}>
+          {/* <button type="button" onClick={() => visibleAdoptionOfDogs()}>
             ADOÇÕES CÃES
           </button>
           <button type="button" onClick={() => visibleAdoptionOfCats()}>
@@ -90,7 +90,7 @@ const Router: React.FC = () => {
           </button>
           <button type="button" onClick={() => visibleAccountability()}>
             PRESTAÇÃO DE CONTAS
-          </button>
+          </button> */}
           <button type="button" onClick={() => visibleHowToHelp()}>
             COMO AJUDAR
           </button>
