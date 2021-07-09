@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from '../../utils/theme';
 
 export const Content = styled.div`
   display: flex;
@@ -32,4 +33,25 @@ export const PresentationText = styled.section`
 export const Supporters = styled.section`
   display: flex;
   flex-direction: column;
+`;
+
+export const Slider = styled.div`
+  display: flex;
+  margin: 3rem;
+  box-sizing: border-box;
+
+  background: ${theme.colors.primary};
+  padding: 1rem 0rem;
+  border-radius: 1rem 1rem 0 0;
+  margin: 0;
+  margin-bottom: 2rem;
+
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  img {
+    width: 30rem;
+    height: 20rem;
+  }
 `;

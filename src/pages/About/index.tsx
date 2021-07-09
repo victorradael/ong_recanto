@@ -1,14 +1,42 @@
 import React from 'react';
 import Player from 'react-player';
+import Image2 from '../../assets/images/2.jpeg';
+import Image7 from '../../assets/images/7.jpeg';
+import Image9 from '../../assets/images/9.jpeg';
+import Image10 from '../../assets/images/10.jpeg';
+import Image14 from '../../assets/images/14.jpeg';
+import Image15 from '../../assets/images/15.jpeg';
+import Image17 from '../../assets/images/17.jpeg';
+import Image18 from '../../assets/images/18.jpeg';
+import Image19 from '../../assets/images/19.jpeg';
 
+import Image21 from '../../assets/images/21.jpeg';
 import Layout from '../../components/Layout';
 
-import { Content, PresentationText, Supporters } from './styles';
+import { Content, PresentationText, Supporters, Slider } from './styles';
 
 const About: React.FC = () => {
+  const images = [
+    Image2,
+    Image7,
+    Image9,
+    Image10,
+    Image15,
+    Image14,
+    Image17,
+    Image18,
+    Image19,
+    Image21,
+  ];
+
   return (
     <Layout>
       <Content>
+        <Slider>
+          {images.map(image => {
+            return <img src={image} alt="" />;
+          })}
+        </Slider>
         <PresentationText>
           <p>
             A ONG Recanto dos Animais foi fundada em 2012, por um grupo de
