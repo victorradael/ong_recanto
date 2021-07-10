@@ -18,7 +18,7 @@ export const NavContainer = styled.nav`
     width: 100%;
     max-width: 1080px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 0.8rem;
 
     button {
@@ -30,6 +30,11 @@ export const NavContainer = styled.nav`
       text-align: center;
       font-weight: 700;
       transition: 0.2s;
+      margin-right: 2rem;
+
+      &:nth-last-child(1) {
+        margin: 0;
+      }
 
       @media (max-width: 1080px) {
         font-size: 0.8rem;
