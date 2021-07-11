@@ -40,9 +40,7 @@ export const Slider = styled.div`
   margin: 3rem;
   box-sizing: border-box;
 
-  background: ${theme.colors.primary};
-  padding: 1rem 0rem;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1rem;
   margin: 0;
   margin-bottom: 2rem;
 
@@ -53,5 +51,23 @@ export const Slider = styled.div`
   img {
     width: 30rem;
     height: 20rem;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: ${theme.colors.secondary} ${theme.colors.whiteText};
+
+  /* Works on Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${theme.colors.whiteText};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${theme.colors.secondary};
+    border-radius: 20px;
+    border: 3px solid ${theme.colors.whiteText};
   }
 `;
