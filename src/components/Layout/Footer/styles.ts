@@ -21,148 +21,8 @@ export const Content = styled.div`
   align-items: center;
 `;
 
-export const Contacts = styled.div`
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  right: 1rem;
-  bottom: 1rem;
-  flex-direction: column;
-`;
-
-export const Whatsapp = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${theme.colors.whiteText};
-  -webkit-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  margin-top: 0.8rem;
-  padding: 0.2rem;
-  border-radius: 50% 50% 50% 0.4rem;
-
-  svg {
-    color: ${theme.colors.secondary};
-  }
-
-  transition: 0.5s;
-
-  &:hover {
-    background: ${theme.colors.secondary};
-    svg {
-      color: ${theme.colors.whiteText};
-    }
-  }
-`;
-
-export const Instagram = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${theme.colors.whiteText};
-  -webkit-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  margin-top: 0.8rem;
-  padding: 0.2rem;
-  border-radius: 0.4rem;
-
-  svg {
-    color: ${theme.colors.secondary};
-  }
-
-  transition: 0.5s;
-
-  &:hover {
-    background: ${theme.colors.secondary};
-    svg {
-      color: ${theme.colors.whiteText};
-    }
-  }
-`;
-
-export const Facebook = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${theme.colors.whiteText};
-  -webkit-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  margin-top: 0.8rem;
-  padding: 0.2rem;
-  border-radius: 0.4rem;
-
-  svg {
-    color: ${theme.colors.secondary};
-  }
-
-  transition: 0.5s;
-
-  &:hover {
-    background: ${theme.colors.secondary};
-    svg {
-      color: ${theme.colors.whiteText};
-    }
-  }
-`;
-
-export const Email = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${theme.colors.whiteText};
-  -webkit-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  padding: 0.2rem;
-  border-radius: 0.4rem;
-
-  svg {
-    color: ${theme.colors.secondary};
-  }
-
-  transition: 0.5s;
-
-  &:hover {
-    background: ${theme.colors.secondary};
-    svg {
-      color: ${theme.colors.whiteText};
-    }
-  }
-`;
-
-export const Twitter = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${theme.colors.whiteText};
-  -webkit-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  margin-top: 0.8rem;
-  padding: 0.2rem;
-  border-radius: 0.4rem 30% 70% 0.4rem;
-
-  svg {
-    color: ${theme.colors.secondary};
-  }
-
-  transition: 0.5s;
-
-  &:hover {
-    background: ${theme.colors.secondary};
-    svg {
-      color: ${theme.colors.whiteText};
-    }
-  }
-`;
-
 export const Github = styled.a`
   position: absolute;
-  align: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,6 +43,10 @@ export const Github = styled.a`
 
   transition: color 1s;
 
+  svg {
+    border-radius: 50%;
+  }
+
   &:hover {
     p {
       max-width: 20rem;
@@ -190,10 +54,31 @@ export const Github = styled.a`
       pointer-events: none;
     }
 
-    color: #000;
+    background-image: linear-gradient(to right, #fc466b, #3f5efb);
+    background-image: -webkit-linear-gradient(to right, #fc466b, #3f5efb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    svg {
+      background-image: linear-gradient(to right, #fc466b, #3f5efb);
+      background-image: -webkit-linear-gradient(to right, #fc466b, #3f5efb);
+    }
   }
 `;
 
 export const CopyRight = styled.footer`
   color: #fff;
+  font-weight: bold;
+
+  transition: 0.5s;
+
+  &:hover {
+    background-image: linear-gradient(to right, #3f5efb, #fc466b);
+    background-image: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;
