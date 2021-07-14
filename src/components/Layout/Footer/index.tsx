@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import Contacts from '../../contacts';
+import Contacts from '../../Contacts';
 
 import { Container, Content, Github, CopyRight } from './styles';
 

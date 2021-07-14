@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
+  margin-top: 13rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -11,13 +12,30 @@ export const Content = styled.div`
 `;
 
 export const Text = styled.section`
-  padding: 6rem 14rem 3rem;
-  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 9rem;
+  margin: 0 auto;
+  align-items: center;
 
   p {
     margin: 0;
-    line-height: 28px;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  @media (min-width: 360px) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  @media (min-width: 720px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  @media (min-width: 1080px) {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 `;
 
