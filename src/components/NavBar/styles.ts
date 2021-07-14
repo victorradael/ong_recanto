@@ -36,12 +36,16 @@ export const NavContainer = styled.nav`
         margin: 0;
       }
 
-      @media (max-width: 1080px) {
-        font-size: 0.8rem;
+      @media (min-width: 720px) {
+        font-size: 2rem;
       }
 
-      @media (max-width: 980px) {
-        font-size: 0.7rem;
+      @media (min-width: 980px) {
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: 1080px) {
+        font-size: 1rem;
       }
 
       &:hover {
