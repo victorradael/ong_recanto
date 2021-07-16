@@ -1,6 +1,5 @@
 import React from 'react';
 import Player from 'react-player';
-import Image2 from '../../assets/images/2.jpeg';
 import Image7 from '../../assets/images/7.jpeg';
 import Image9 from '../../assets/images/9.jpeg';
 import Image10 from '../../assets/images/10.jpeg';
@@ -17,7 +16,6 @@ import { Content, PresentationText, Supporters, Slider } from './styles';
 
 const About: React.FC = () => {
   const images = [
-    Image2,
     Image7,
     Image9,
     Image10,
