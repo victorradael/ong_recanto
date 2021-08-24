@@ -25,22 +25,36 @@ export const PresentationText = styled.section`
   p {
     margin: 0;
     margin-bottom: 1.6rem;
+    box-sizing: border-box;
   }
 
-  @media (min-width: 360px) {
-    font-size: 2rem;
-    line-height: 3rem;
-  }
+  font-size: 1.5rem;
+  line-height: 2rem;
 
-  @media (min-width: 720px) {
+  @media (max-width: 1080px) {
     font-size: 1.5rem;
     line-height: 2rem;
   }
 
-  @media (min-width: 1080px) {
-    font-size: 1rem;
-    line-height: 1.5rem;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 0rem 3rem;
   }
+
+  @media (max-width: 414px) {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    padding: 0rem 0rem;
+  }
+
+  @media (max-width: 376px) {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    padding: 0rem 0rem;
+  }
+
+  box-sizing: border-box;
 `;
 
 export const Supporters = styled.section`
@@ -82,5 +96,29 @@ export const Slider = styled.div`
     background-color: ${theme.colors.secondary};
     border-radius: 20px;
     border: 3px solid ${theme.colors.whiteText};
+  }
+`;
+
+export const PlayerCustom = styled.iframe`
+  width: 40vw;
+  height: 60vh;
+  @media (max-width: 1080px) {
+    width: 80vw;
+    height: 60vh;
+  }
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    height: 80vh;
+  }
+
+  @media (max-width: 414px) {
+    width: 60vw;
+    height: 20vh;
+  }
+
+  @media (max-width: 376px) {
+    width: 60vw;
+    height: 20vh;
   }
 `;

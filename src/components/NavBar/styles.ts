@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { pixelToViewWidth } from '../../utils/pixelToViewWidth';
+// import { pixelToViewWidth } from '../../utils/pixelToViewWidth';
 import theme from '../../utils/theme';
 
 export const NavContainer = styled.nav`
