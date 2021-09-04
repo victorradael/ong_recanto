@@ -4,6 +4,7 @@ import './globalStyles.css';
 import NavBar from './components/NavBar';
 
 import About from './pages/About';
+import LinkTree from './pages/LinkTree';
 import Accountability from './pages/Accountability';
 import AdoptionOfCats from './pages/AdoptionOfCats';
 import AdoptionOfDogs from './pages/AdoptionOfDogs';
@@ -11,8 +12,9 @@ import Adopted from './pages/Adopted';
 import HowToHelp from './pages/HowToHelp';
 
 const Router: React.FC = () => {
-  const [showAbout, setShowAbout] = useState(true);
+  const [showAbout, setShowAbout] = useState(false);
   const [showAccountability, setShowAccountability] = useState(false);
+  const [showLinkTree, setShowLinkTree] = useState(true);
   const [showAdoptionOfCats, setShowAdoptionOfCats] = useState(false);
   const [showAdoptionOfDogs, setShowAdoptionOfDogs] = useState(false);
   const [showAdopted, setShowAdopted] = useState(false);
@@ -21,6 +23,7 @@ const Router: React.FC = () => {
   const visibleAbout = (): void => {
     setShowAbout(true);
     setShowAccountability(false);
+    setShowLinkTree(false);
     setShowAdoptionOfCats(false);
     setShowAdoptionOfDogs(false);
     setShowAdopted(false);
@@ -30,6 +33,17 @@ const Router: React.FC = () => {
   const visibleAccountability = (): void => {
     setShowAbout(false);
     setShowAccountability(true);
+    setShowLinkTree(false);
+    setShowAdoptionOfCats(false);
+    setShowAdoptionOfDogs(false);
+    setShowAdopted(false);
+    setShowHowToHelp(false);
+  };
+
+  const visibleLinkTree = (): void => {
+    setShowAbout(false);
+    setShowAccountability(false);
+    setShowLinkTree(true);
     setShowAdoptionOfCats(false);
     setShowAdoptionOfDogs(false);
     setShowAdopted(false);
@@ -39,6 +53,7 @@ const Router: React.FC = () => {
   const visibleAdoptionOfCats = (): void => {
     setShowAbout(false);
     setShowAccountability(false);
+    setShowLinkTree(false);
     setShowAdoptionOfCats(true);
     setShowAdoptionOfDogs(false);
     setShowAdopted(false);
@@ -48,6 +63,7 @@ const Router: React.FC = () => {
   const visibleAdoptionOfDogs = (): void => {
     setShowAbout(false);
     setShowAccountability(false);
+    setShowLinkTree(false);
     setShowAdoptionOfCats(false);
     setShowAdoptionOfDogs(true);
     setShowAdopted(false);
@@ -57,6 +73,7 @@ const Router: React.FC = () => {
   const visibleAdopted = (): void => {
     setShowAbout(false);
     setShowAccountability(false);
+    setShowLinkTree(false);
     setShowAdoptionOfCats(false);
     setShowAdoptionOfDogs(false);
     setShowAdopted(true);
@@ -66,6 +83,7 @@ const Router: React.FC = () => {
   const visibleHowToHelp = (): void => {
     setShowAbout(false);
     setShowAccountability(false);
+    setShowLinkTree(false);
     setShowAdoptionOfCats(false);
     setShowAdoptionOfDogs(false);
     setShowAdopted(false);
@@ -76,6 +94,9 @@ const Router: React.FC = () => {
     <>
       <NavBar>
         <div>
+          <button type="button" onClick={() => visibleLinkTree()}>
+            CONTATOS
+          </button>
           <button type="button" onClick={() => visibleAbout()}>
             SOBRE NÓS
           </button>
@@ -96,6 +117,7 @@ const Router: React.FC = () => {
           </button>
         </div>
       </NavBar>
+      {showLinkTree && <LinkTree />}
       {showAbout && <About />}
       {showAccountability && <Accountability />}
       {showAdoptionOfCats && <AdoptionOfCats />}

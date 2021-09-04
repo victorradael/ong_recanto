@@ -28,6 +28,7 @@ const Contacts: React.FC = () => {
     <Content>
       <Email href="mailto:ongrecantodosanimais@gmail.com" target="_blank">
         <FaMailBulk size="2rem" />
+        <p>Email</p>
       </Email>
 
       <Instagram
@@ -35,19 +36,23 @@ const Contacts: React.FC = () => {
         target="blank"
       >
         <FaInstagram size="2rem" />
+        <p>Instagram</p>
       </Instagram>
       <Facebook
         href="https://www.facebook.com/recantodosanimaisourobranco"
         target="blank"
       >
         <FaFacebookSquare size="2rem" />
+        <p>Facebook</p>
       </Facebook>
       <Twitter href="https://twitter.com/ongrecanto" target="blank">
         <FaTwitter size="2rem" />
+        <p>Twitter</p>
       </Twitter>
 
       <Whatsapp href="/#" onClick={() => openWhatsappChat()} target="blank">
         <FaWhatsapp size="2rem" />
+        <p>Whatsapp</p>
       </Whatsapp>
     </Content>
   );
