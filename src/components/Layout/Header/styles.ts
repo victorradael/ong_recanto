@@ -77,29 +77,8 @@ export const Logo = styled.img`
   position: absolute;
   top: 0rem;
   left: -5rem;
-
-  /* @media (max-width: 1080px) {
-    width: 80vw;
-    height: 60vh;
-  } */
-
-  @media (max-width: 768px) {
-    width: 50vw;
-    height: 80vh;
-    left: 0rem;
-  }
-
-  @media (max-width: 414px) {
-    width: 50vw;
-    height: 30vh;
-    left: -1rem;
-  }
-
-  @media (max-width: 376px) {
-    width: 50vw;
-    height: 30vh;
-    left: 0rem;
-  }
+  /* width: 3rem; */
+  height: 30rem;
 `;
 
 export const BannerText = styled.span`
