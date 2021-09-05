@@ -7,14 +7,7 @@ import {
   FaMailBulk,
 } from 'react-icons/fa';
 
-import {
-  Content,
-  Whatsapp,
-  Instagram,
-  Facebook,
-  Email,
-  Twitter,
-} from './styles';
+import { Content, ContactCard } from './styles';
 
 const Contacts: React.FC = () => {
   const openWhatsappChat = (): void => {
@@ -26,29 +19,36 @@ const Contacts: React.FC = () => {
   };
   return (
     <Content>
-      <Email href="mailto:ongrecantodosanimais@gmail.com" target="_blank">
+      <ContactCard href="mailto:ongrecantodosanimais@gmail.com" target="_blank">
         <FaMailBulk size="2rem" />
-      </Email>
+        <p>Email</p>
+      </ContactCard>
 
-      <Instagram
+      <ContactCard
         href="https://www.instagram.com/ong.recanto/?hl=pt-br"
         target="blank"
       >
         <FaInstagram size="2rem" />
-      </Instagram>
-      <Facebook
+        <p>Instagram</p>
+      </ContactCard>
+
+      <ContactCard
         href="https://www.facebook.com/recantodosanimaisourobranco"
         target="blank"
       >
         <FaFacebookSquare size="2rem" />
-      </Facebook>
-      <Twitter href="https://twitter.com/ongrecanto" target="blank">
-        <FaTwitter size="2rem" />
-      </Twitter>
+        <p>Facebook</p>
+      </ContactCard>
 
-      <Whatsapp href="/#" onClick={() => openWhatsappChat()} target="blank">
+      <ContactCard href="https://twitter.com/ongrecanto" target="blank">
+        <FaTwitter size="2rem" />
+        <p>Twitter</p>
+      </ContactCard>
+
+      <ContactCard href="/#" onClick={() => openWhatsappChat()} target="blank">
         <FaWhatsapp size="2rem" />
-      </Whatsapp>
+        <p>Whatsapp</p>
+      </ContactCard>
     </Content>
   );
 };
