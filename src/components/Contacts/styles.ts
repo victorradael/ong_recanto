@@ -55,7 +55,7 @@ export const ContactCard = styled.a`
 
   width: 100%;
 
-  @media (min-width: 1080px) {
+  @media (min-width: 600px) {
     p {
       font-size: 5rem;
     }
