@@ -4,7 +4,7 @@ import {} from 'react-icons/ai';
 
 import pixLogo from '../../assets/pixLogo.png';
 import Layout from '../../components/Layout';
-import { Content, Options, Pix, Button, Text } from './styles';
+import { Content, Options, Pix, Button, Text, PlayerCustom } from './styles';
 
 const HowToHelp: React.FC = () => {
   return (
@@ -34,7 +34,7 @@ const HowToHelp: React.FC = () => {
           </p>
         </Text>
 
-        <Player url="https://www.youtube.com/embed/J1mCHyRHW6U" />
+        <PlayerCustom src="https://www.youtube.com/embed/J1mCHyRHW6U" />
         <h2>Como ajudar:</h2>
         <Options>
           <Button

@@ -35,4 +35,20 @@ export const Content = styled.div`
   align-items: center;
 
   padding: 1rem;
+
+  @media (max-width: 1080px) {
+    padding: 0rem 1rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0rem 1rem;
+  }
+
+  @media (max-width: 414px) {
+    padding: 0rem 1rem;
+  }
+
+  @media (max-width: 376px) {
+    padding: 0rem 1rem;
+  }
 `;
