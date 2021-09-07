@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoImage from '../../../assets/logo.svg';
+import LogoImage from '../../../assets/logo.png';
 
 import { Container, TopBar, Logo, Strong } from './styles';
 

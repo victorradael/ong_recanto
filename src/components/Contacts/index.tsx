@@ -5,10 +5,16 @@ import {
   FaFacebookSquare,
   FaTwitter,
   FaMailBulk,
-  FaDog,
 } from 'react-icons/fa';
 
-import { Content, ContactCard } from './styles';
+import {
+  Content,
+  Whatsapp,
+  Instagram,
+  Facebook,
+  Email,
+  Twitter,
+} from './styles';
 
 const Contacts: React.FC = () => {
   const openWhatsappChat = (): void => {
@@ -20,44 +26,29 @@ const Contacts: React.FC = () => {
   };
   return (
     <Content>
-      <ContactCard href="mailto:ongrecantodosanimais@gmail.com" target="_blank">
+      <Email href="mailto:ongrecantodosanimais@gmail.com" target="_blank">
         <FaMailBulk size="2rem" />
-        <p>Email</p>
-      </ContactCard>
+      </Email>
 
-      <ContactCard
+      <Instagram
         href="https://www.instagram.com/ong.recanto/?hl=pt-br"
         target="blank"
       >
         <FaInstagram size="2rem" />
-        <p>Instagram</p>
-      </ContactCard>
-
-      <ContactCard
+      </Instagram>
+      <Facebook
         href="https://www.facebook.com/recantodosanimaisourobranco"
         target="blank"
       >
         <FaFacebookSquare size="2rem" />
-        <p>Facebook</p>
-      </ContactCard>
-
-      <ContactCard href="https://twitter.com/ongrecanto" target="blank">
+      </Facebook>
+      <Twitter href="https://twitter.com/ongrecanto" target="blank">
         <FaTwitter size="2rem" />
-        <p>Twitter</p>
-      </ContactCard>
+      </Twitter>
 
-      <ContactCard href="/#" onClick={() => openWhatsappChat()} target="blank">
+      <Whatsapp href="/#" onClick={() => openWhatsappChat()} target="blank">
         <FaWhatsapp size="2rem" />
-        <p>Whatsapp</p>
-      </ContactCard>
-
-      <ContactCard
-        href="https://evoe.cc/ong_recanto_dos_animais"
-        target="blank"
-      >
-        <FaDog size="2rem" />
-        <p>Evoe</p>
-      </ContactCard>
+      </Whatsapp>
     </Content>
   );
 };
