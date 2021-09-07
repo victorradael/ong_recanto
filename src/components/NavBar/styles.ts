@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { pixelToViewWidth } from '../../utils/pixelToViewWidth';
+// import { pixelToViewWidth } from '../../utils/pixelToViewWidth';
 import theme from '../../utils/theme';
 
 export const NavContainer = styled.nav`
@@ -18,7 +18,6 @@ export const NavContainer = styled.nav`
     width: 100%;
     max-width: 1080px;
     display: flex;
-    /* justify-content: space-between; */
     padding: 0.8rem;
 
     button {
@@ -36,28 +35,33 @@ export const NavContainer = styled.nav`
         margin: 0;
       }
 
-      @media (min-width: 720px) {
-        font-size: 2rem;
-      }
-
-      @media (min-width: 980px) {
-        font-size: 1.5rem;
-      }
-
-      @media (min-width: 1080px) {
+      @media (max-width: 1080px) {
         font-size: 1rem;
+        margin-right: 1.5rem;
+        height: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 0.85rem;
+        margin-right: 0.8rem;
+        height: 2rem;
+      }
+
+      @media (max-width: 414px) {
+        font-size: 0.7rem;
+        margin-right: 0.6rem;
+        height: 2rem;
+      }
+
+      @media (max-width: 376px) {
+        font-size: 0.7rem;
+        margin-right: 0.6rem;
+        height: 2rem;
       }
 
       &:hover {
         color: ${theme.colors.secondaryLight};
       }
-    }
-
-    transition: 0.3s;
-    @media (max-width: 660px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-bottom: 0.2rem;
     }
   }
 `;
