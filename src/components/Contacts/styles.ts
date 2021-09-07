@@ -6,6 +6,8 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  width: 100%;
 `;
 
 export const ContactCard = styled.a`
@@ -24,6 +26,9 @@ export const ContactCard = styled.a`
 
   svg {
     color: ${theme.colors.secondary};
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   transition: 0.5s;
@@ -44,7 +49,9 @@ export const ContactCard = styled.a`
     padding: 0;
     color: ${theme.colors.whiteText};
     font-weight: bold;
+    align-items: center;
+    text-align: center;
   }
 
-  width: 10rem;
+  width: 100%;
 `;
