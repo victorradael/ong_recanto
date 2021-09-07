@@ -54,4 +54,14 @@ export const ContactCard = styled.a`
   }
 
   width: 100%;
+
+  @media (min-width: 1080px) {
+    p {
+      font-size: 5rem;
+    }
+
+    svg {
+      height: 5rem;
+    }
+  }
 `;
