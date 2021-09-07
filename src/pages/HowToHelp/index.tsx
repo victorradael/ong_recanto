@@ -1,5 +1,4 @@
 import React from 'react';
-import Player from 'react-player';
 import {} from 'react-icons/ai';
 
 import pixLogo from '../../assets/pixLogo.png';
