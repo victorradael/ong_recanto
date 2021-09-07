@@ -1,5 +1,4 @@
 import React from 'react';
-import Player from 'react-player';
 import Image7 from '../../assets/images/7.jpeg';
 import Image9 from '../../assets/images/9.jpeg';
 import Image10 from '../../assets/images/10.jpeg';
