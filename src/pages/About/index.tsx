@@ -11,7 +11,13 @@ import Image19 from '../../assets/images/19.jpeg';
 import Image21 from '../../assets/images/21.jpeg';
 import Layout from '../../components/Layout';
 
-import { Content, PresentationText, Supporters, Slider } from './styles';
+import {
+  Content,
+  PresentationText,
+  Supporters,
+  Slider,
+  PlayerCustom,
+} from './styles';
 
 const About: React.FC = () => {
   const images = [
@@ -59,13 +65,41 @@ const About: React.FC = () => {
         </PresentationText>
         <Supporters>
           <h2>Apoiadores: </h2>
-          <Player url="https://youtu.be/pLAbEV3z-ck" />
+
+          <PlayerCustom
+            src="https://www.youtube.com/embed/pLAbEV3z-ck"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
           <h3>Matheus Abreu</h3>
-          <Player url="https://youtu.be/gutFlQmNz1M " />
+
+          <PlayerCustom
+            src="https://www.youtube.com/embed/gutFlQmNz1M"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
           <h3>Pedro Alves</h3>
-          <Player url="https://youtu.be/jKEqF824D48 " />
+
+          <PlayerCustom
+            src="https://www.youtube.com/embed/jKEqF824D48"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
           <h3>José Loreto</h3>
-          <Player url="https://youtu.be/Nlh4tXQH6mE " />
+
+          <PlayerCustom
+            src="https://www.youtube.com/embed/Nlh4tXQH6mE"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
           <h3>Kaysar Dadour</h3>
         </Supporters>
       </Content>
