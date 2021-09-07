@@ -39,22 +39,6 @@ export const Github = styled.a`
     max-height: 0rem;
     overflow: hidden;
     transition: max-width 1s ease-in-out;
-
-    @media (max-width: 1080px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 414px) {
-      font-size: 0.7rem;
-    }
-
-    @media (max-width: 376px) {
-      font-size: 0.7rem;
-    }
   }
 
   transition: color 1s;
@@ -88,22 +72,6 @@ export const CopyRight = styled.footer`
   font-weight: bold;
 
   transition: 0.5s;
-
-  @media (max-width: 1080px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.85rem;
-  }
-
-  @media (max-width: 414px) {
-    font-size: 0.7rem;
-  }
-
-  @media (max-width: 376px) {
-    font-size: 0.7rem;
-  }
 
   &:hover {
     background-image: linear-gradient(to right, #3f5efb, #fc466b);

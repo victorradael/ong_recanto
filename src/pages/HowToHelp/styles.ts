@@ -1,85 +1,42 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  margin-top: 5rem;
+  margin-top: 13rem;
   display: flex;
   flex-direction: column;
   flex: 1;
   min-height: 100%;
   justify-content: top;
   align-items: center;
-  padding: 0 1rem;
-
-  h2 {
-    @media (max-width: 1080px) {
-      font-size: 1.8rem;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 1.4rem;
-    }
-
-    @media (max-width: 414px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 376px) {
-      font-size: 1rem;
-    }
-  }
+  padding: 2rem 0;
 `;
 
 export const Text = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 0;
-
+  padding: 0rem 9rem;
+  margin: 0 auto;
   align-items: center;
-  justify-content: left;
-  min-width: 600px;
 
   p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 0;
     margin-bottom: 1.6rem;
-    padding: 0;
-    max-width: 50rem;
-
-    @media (max-width: 1080px) {
-      font-size: 1.3rem;
-      line-height: 1.3rem;
-      padding: 0rem 0rem;
-      max-width: 40rem;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-      line-height: 1rem;
-      padding: 0rem 0rem;
-      max-width: 30rem;
-    }
-
-    @media (max-width: 414px) {
-      font-size: 0.8rem;
-      line-height: 0.9rem;
-      padding: 0rem 0rem;
-      max-width: 15rem;
-    }
-
-    @media (max-width: 376px) {
-      font-size: 0.8rem;
-      line-height: 0.9rem;
-      padding: 0rem 0rem;
-      max-width: 15rem;
-    }
   }
 
-  font-size: 1.5rem;
-  line-height: 2rem;
+  @media (min-width: 360px) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 
-  box-sizing: border-box;
+  @media (min-width: 720px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  @media (min-width: 1080px) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 `;
 
 export const Options = styled.div`
@@ -91,26 +48,6 @@ export const Options = styled.div`
   justify-content: space-between;
   margin-top: 2rem;
   padding: 0rem 8rem;
-
-  @media (max-width: 1080px) {
-    padding: 0rem 0rem;
-    max-width: 40rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0rem 0rem;
-    max-width: 30rem;
-  }
-
-  @media (max-width: 414px) {
-    padding: 0rem 0rem;
-    max-width: 15rem;
-  }
-
-  @media (max-width: 376px) {
-    padding: 0rem 0rem;
-    max-width: 15rem;
-  }
 `;
 
 export const Pix = styled.div`
@@ -132,22 +69,6 @@ export const Pix = styled.div`
     p {
       margin: 0;
       padding: 0;
-
-      @media (max-width: 1080px) {
-        font-size: 1rem;
-      }
-
-      @media (max-width: 768px) {
-        font-size: 1rem;
-      }
-
-      @media (max-width: 414px) {
-        font-size: 0.8rem;
-      }
-
-      @media (max-width: 376px) {
-        font-size: 0.8rem;
-      }
     }
 
     p:first-child {
@@ -178,48 +99,4 @@ export const Button = styled.a`
   -webkit-box-shadow: 2px 3px 15px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 3px 15px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 3px 15px 0px rgba(0, 0, 0, 0.75);
-
-  @media (max-width: 1080px) {
-    font-size: 1.3rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 414px) {
-    font-size: 1rem;
-    padding: 0.5rem 0.7rem;
-    border-radius: 0.3rem;
-  }
-
-  @media (max-width: 376px) {
-    font-size: 1rem;
-    padding: 0.5rem 0.7rem;
-    border-radius: 0.3rem;
-  }
-`;
-
-export const PlayerCustom = styled.iframe`
-  width: 40vw;
-  height: 60vh;
-  @media (max-width: 1080px) {
-    width: 80vw;
-    height: 60vh;
-  }
-
-  @media (max-width: 768px) {
-    width: 80vw;
-    height: 80vh;
-  }
-
-  @media (max-width: 414px) {
-    width: 60vw;
-    height: 20vh;
-  }
-
-  @media (max-width: 376px) {
-    width: 60vw;
-    height: 20vh;
-  }
 `;
