@@ -33,6 +33,7 @@ export const Text = styled.section`
   display: flex;
   flex-direction: column;
   padding: 0;
+  margin-top: 3rem;
 
   align-items: center;
   justify-content: left;
