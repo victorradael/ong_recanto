@@ -1,131 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './globalStyles.css';
 
 import NavBar from './components/NavBar';
 
 import About from './pages/About';
 import LinkTree from './pages/LinkTree';
-import Accountability from './pages/Accountability';
-import AdoptionOfCats from './pages/AdoptionOfCats';
-import AdoptionOfDogs from './pages/AdoptionOfDogs';
-import Adopted from './pages/Adopted';
+import WhyCastrate from './pages/WhyCastrate';
 import HowToHelp from './pages/HowToHelp';
 
-const Router: React.FC = () => {
-  const [showAbout, setShowAbout] = useState(false);
-  const [showAccountability, setShowAccountability] = useState(false);
-  const [showLinkTree, setShowLinkTree] = useState(true);
-  const [showAdoptionOfCats, setShowAdoptionOfCats] = useState(false);
-  const [showAdoptionOfDogs, setShowAdoptionOfDogs] = useState(false);
-  const [showAdopted, setShowAdopted] = useState(false);
-  const [showHowToHelp, setShowHowToHelp] = useState(false);
-
-  const visibleAbout = (): void => {
-    setShowAbout(true);
-    setShowAccountability(false);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
-    setShowHowToHelp(false);
-  };
-
-  const visibleAccountability = (): void => {
-    setShowAbout(false);
-    setShowAccountability(true);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
-    setShowHowToHelp(false);
-  };
-
-  const visibleLinkTree = (): void => {
-    setShowAbout(false);
-    setShowAccountability(false);
-    setShowLinkTree(true);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
-    setShowHowToHelp(false);
-  };
-
-  const visibleAdoptionOfCats = (): void => {
-    setShowAbout(false);
-    setShowAccountability(false);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(true);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
-    setShowHowToHelp(false);
-  };
-
-  const visibleAdoptionOfDogs = (): void => {
-    setShowAbout(false);
-    setShowAccountability(false);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(true);
-    setShowAdopted(false);
-    setShowHowToHelp(false);
-  };
-
-  const visibleAdopted = (): void => {
-    setShowAbout(false);
-    setShowAccountability(false);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(true);
-    setShowHowToHelp(false);
-  };
-
-  const visibleHowToHelp = (): void => {
-    setShowAbout(false);
-    setShowAccountability(false);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
-    setShowHowToHelp(true);
-  };
-
+const Routes: React.FC = () => {
   return (
-    <>
+    <Router>
       <NavBar>
         <div>
-          <button type="button" onClick={() => visibleLinkTree()}>
-            CONTATOS
-          </button>
-          <button type="button" onClick={() => visibleAbout()}>
-            SOBRE NÓS
-          </button>
-          {/* <button type="button" onClick={() => visibleAdoptionOfDogs()}>
-            ADOÇÕES CÃES
-          </button>
-          <button type="button" onClick={() => visibleAdoptionOfCats()}>
-            ADOÇÕES GATOS
-          </button>
-          <button type="button" onClick={() => visibleAdopted()}>
-            ADOTADOS
-          </button>
-          <button type="button" onClick={() => visibleAccountability()}>
-            PRESTAÇÃO DE CONTAS
-          </button> */}
-          <button type="button" onClick={() => visibleHowToHelp()}>
-            COMO AJUDAR
-          </button>
+          <Link to="/">CONTATOS</Link>
+          <Link to="/sobre">SOBRE NÓS</Link>
+          <Link to="/ajudar">COMO AJUDAR</Link>
+          <Link to="/castrar">POR QUÊ CASTRAR?</Link>
         </div>
       </NavBar>
-      {showLinkTree && <LinkTree />}
-      {showAbout && <About />}
-      {showAccountability && <Accountability />}
-      {showAdoptionOfCats && <AdoptionOfCats />}
-      {showAdoptionOfDogs && <AdoptionOfDogs />}
-      {showAdopted && <Adopted />}
-      {showHowToHelp && <HowToHelp />}
-    </>
+      <Switch>
+        <Route exact path="/">
+          <LinkTree />
+        </Route>
+        <Route path="/sobre">
+          <About />
+        </Route>
+        <Route path="/ajudar">
+          <HowToHelp />
+        </Route>
+        <Route path="/castrar">
+          <WhyCastrate />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
-export default Router;
+export default Routes;
