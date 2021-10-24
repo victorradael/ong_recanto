@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { pixelToViewWidth } from '../../utils/pixelToViewWidth';
+
 import theme from '../../utils/theme';
 
 export const NavContainer = styled.nav`
@@ -20,7 +20,7 @@ export const NavContainer = styled.nav`
     display: flex;
     padding: 0.8rem;
 
-    button {
+    a {
       text-decoration: none;
       background: transparent;
       border: none;
