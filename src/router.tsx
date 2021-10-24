@@ -17,7 +17,7 @@ const Routes: React.FC = () => {
           <Link to="/">CONTATOS</Link>
           <Link to="/sobre">SOBRE NÓS</Link>
           <Link to="/ajudar">COMO AJUDAR</Link>
-          <Link to="/castrar">POR QUÊ CASTRAR?</Link>
+          <Link to="/castrar">CASTRAR, POR QUÊ?</Link>
         </div>
       </NavBar>
       <Switch>
