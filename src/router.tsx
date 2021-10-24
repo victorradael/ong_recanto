@@ -5,88 +5,40 @@ import NavBar from './components/NavBar';
 
 import About from './pages/About';
 import LinkTree from './pages/LinkTree';
-import Accountability from './pages/Accountability';
-import AdoptionOfCats from './pages/AdoptionOfCats';
-import AdoptionOfDogs from './pages/AdoptionOfDogs';
-import Adopted from './pages/Adopted';
+import WhyCastrate from './pages/WhyCastrate';
 import HowToHelp from './pages/HowToHelp';
 
 const Router: React.FC = () => {
   const [showAbout, setShowAbout] = useState(false);
-  const [showAccountability, setShowAccountability] = useState(false);
+  const [showWhyCastrate, setShowWhyCastrate] = useState(false);
   const [showLinkTree, setShowLinkTree] = useState(true);
-  const [showAdoptionOfCats, setShowAdoptionOfCats] = useState(false);
-  const [showAdoptionOfDogs, setShowAdoptionOfDogs] = useState(false);
-  const [showAdopted, setShowAdopted] = useState(false);
   const [showHowToHelp, setShowHowToHelp] = useState(false);
 
   const visibleAbout = (): void => {
     setShowAbout(true);
-    setShowAccountability(false);
+    setShowWhyCastrate(false);
     setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
     setShowHowToHelp(false);
   };
 
-  const visibleAccountability = (): void => {
+  const whyCastrate = (): void => {
     setShowAbout(false);
-    setShowAccountability(true);
+    setShowWhyCastrate(true);
     setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
     setShowHowToHelp(false);
   };
 
   const visibleLinkTree = (): void => {
     setShowAbout(false);
-    setShowAccountability(false);
+    setShowWhyCastrate(false);
     setShowLinkTree(true);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
-    setShowHowToHelp(false);
-  };
-
-  const visibleAdoptionOfCats = (): void => {
-    setShowAbout(false);
-    setShowAccountability(false);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(true);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
-    setShowHowToHelp(false);
-  };
-
-  const visibleAdoptionOfDogs = (): void => {
-    setShowAbout(false);
-    setShowAccountability(false);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(true);
-    setShowAdopted(false);
-    setShowHowToHelp(false);
-  };
-
-  const visibleAdopted = (): void => {
-    setShowAbout(false);
-    setShowAccountability(false);
-    setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(true);
     setShowHowToHelp(false);
   };
 
   const visibleHowToHelp = (): void => {
     setShowAbout(false);
-    setShowAccountability(false);
+    setShowWhyCastrate(false);
     setShowLinkTree(false);
-    setShowAdoptionOfCats(false);
-    setShowAdoptionOfDogs(false);
-    setShowAdopted(false);
     setShowHowToHelp(true);
   };
 
@@ -100,29 +52,17 @@ const Router: React.FC = () => {
           <button type="button" onClick={() => visibleAbout()}>
             SOBRE NÓS
           </button>
-          {/* <button type="button" onClick={() => visibleAdoptionOfDogs()}>
-            ADOÇÕES CÃES
-          </button>
-          <button type="button" onClick={() => visibleAdoptionOfCats()}>
-            ADOÇÕES GATOS
-          </button>
-          <button type="button" onClick={() => visibleAdopted()}>
-            ADOTADOS
-          </button>
-          <button type="button" onClick={() => visibleAccountability()}>
-            PRESTAÇÃO DE CONTAS
-          </button> */}
           <button type="button" onClick={() => visibleHowToHelp()}>
             COMO AJUDAR
+          </button>
+          <button type="button" onClick={() => whyCastrate()}>
+            POR QUÊ CASTRAR?
           </button>
         </div>
       </NavBar>
       {showLinkTree && <LinkTree />}
       {showAbout && <About />}
-      {showAccountability && <Accountability />}
-      {showAdoptionOfCats && <AdoptionOfCats />}
-      {showAdoptionOfDogs && <AdoptionOfDogs />}
-      {showAdopted && <Adopted />}
+      {showWhyCastrate && <WhyCastrate />}
       {showHowToHelp && <HowToHelp />}
     </>
   );
