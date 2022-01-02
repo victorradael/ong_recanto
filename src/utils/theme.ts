@@ -1,10 +1,10 @@
 export default {
   colors: {
-    primary: '#7ec2ff',
+    primary: '#00E8FF',
     secondary: '#FFF039',
-    secondaryBackgroundGlass: 'rgba(100%,94.099426%,22.399902%, 0.5)',
-    secondaryLight: '#FFF687',
-    whiteText: '#f1f1f1',
-    brown: '#6A4728',
+    secondaryBackgroundGlass: 'rgba(100%,37%,63%, 0.75)',
+    secondaryLight: '#FF5FA0',
+    whiteText: '#f7f7f7',
+    brown: '#FF5FA0',
   },
 };

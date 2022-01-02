@@ -25,13 +25,22 @@ export const ContactCard = styled.a`
   text-decoration: none;
 
   svg {
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.brown};
     width: 100%;
     align-items: center;
     justify-content: center;
   }
 
   transition: 0.5s;
+
+  p {
+    margin: 0 0 0 1rem;
+    padding: 0;
+    color: ${theme.colors.whiteText};
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+  }
 
   &:hover {
     background: ${theme.colors.secondary};
@@ -42,15 +51,6 @@ export const ContactCard = styled.a`
     svg {
       color: ${theme.colors.brown};
     }
-  }
-
-  p {
-    margin: 0 0 0 1rem;
-    padding: 0;
-    color: ${theme.colors.whiteText};
-    font-weight: bold;
-    align-items: center;
-    text-align: center;
   }
 
   width: 100%;
