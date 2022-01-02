@@ -5,7 +5,6 @@ import {
   FaFacebookSquare,
   FaTwitter,
   FaMailBulk,
-  FaDog,
 } from 'react-icons/fa';
 
 import { Content, ContactCard } from './styles';
@@ -49,14 +48,6 @@ const Contacts: React.FC = () => {
       <ContactCard href="/#" onClick={() => openWhatsappChat()} target="blank">
         <FaWhatsapp size="2rem" />
         <p>Whatsapp</p>
-      </ContactCard>
-
-      <ContactCard
-        href="https://evoe.cc/ong_recanto_dos_animais"
-        target="blank"
-      >
-        <FaDog size="2rem" />
-        <p>Evoe</p>
       </ContactCard>
     </Content>
   );
