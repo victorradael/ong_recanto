@@ -9,7 +9,7 @@ const About: React.FC = () => {
     <Layout>
       <Content>
         <PresentationText>
-          <h1>POR QUE DEVO CASTRAR MEUS CACHORROS E GATOS?</h1>
+          <h1>Por que devo castrar meus cachorros e gatos?</h1>
           <p>
             Quando falamos em castração, o primeiro pensamento que vem é o
             controle reprodutivo dos animais, principalmente das fêmeas. Mas a
@@ -126,17 +126,7 @@ const About: React.FC = () => {
             Recanto dos animais <br />
             CNPJ: 16.928.787/0001-96 (PIX)
           </p>
-          <p>
-            Ou ser um apoiador mensalista através do Evoé, onde você pode doar
-            mensalmente R$17, R$50, R$100 ou R$150 ou outro valor a sua escolha
-            através de cartão de crédito. Saiba mais em:
-          </p>
-          <p>
-            <a href="https://evoe.cc/ong_recanto_dos_animais">
-              https://evoe.cc/ong_recanto_dos_animais
-            </a>
-            .
-          </p>
+
           <p>
             <b>
               Precisamos ressaltar que a castração é um procedimento cirúrgico e
