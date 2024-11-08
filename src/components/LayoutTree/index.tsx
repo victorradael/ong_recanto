@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './Header';
 import ContentBody from './ContentBody';
-import Footer from './Footer';
+import Footer from '../Layout/Footer';
 
 const Layout: React.FC = ({ children }) => {
   return (
