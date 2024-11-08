@@ -7,12 +7,14 @@ const Footer: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Github href="https://github.com/victorradael" target="blank">
+        {/* <Github href="https://github.com/victorradael" target="blank">
           <p>Desenvolvido por Victor Radael</p>
           <FaGithub size="1.2rem" />
-        </Github>
+        </Github> */}
         <CopyRight color="#fff">
-          &copy; Copyright 2021 ONG Recanto dos Animais.
+          &copy;
+          {new Date().getFullYear()} ONG Recanto dos Animais. Todos os diretios
+          reservados.
         </CopyRight>
       </Content>
     </Container>

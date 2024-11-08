@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   FaInstagram,
-  FaWhatsapp,
   FaFacebookSquare,
   FaTwitter,
   FaMailBulk,
@@ -43,11 +42,6 @@ const Contacts: React.FC = () => {
       <ContactCard href="https://twitter.com/ongrecanto" target="blank">
         <FaTwitter size="2rem" />
         <p>Twitter</p>
-      </ContactCard>
-
-      <ContactCard href="/#" onClick={() => openWhatsappChat()} target="blank">
-        <FaWhatsapp size="2rem" />
-        <p>Whatsapp</p>
       </ContactCard>
     </Content>
   );
