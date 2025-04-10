@@ -85,31 +85,6 @@ const About: React.FC = () => {
             ao câncer de próstata.
           </p>
           <h2>
-            Como acontecem as castrações gratuitas pela ONG Recanto dos Animais
-            em Ouro Branco?
-          </h2>
-          <p>
-            A Prefeitura Municipal de Ouro Branco disponibiliza uma verba a ser
-            utilizada no mutirão de castração, conforme convênio assinado com a
-            ONG Recantos dos Animais. A ONG contrata o Castra Móvel e convoca os
-            tutores com animais na lista de espera para a cirurgia, conforme
-            orçamento disponibilizado.
-          </p>
-          <p>
-            A lista de espera é preenchida por:
-            <br />
-            - animais adotados através da ONG;
-            <br />
-            - animais em situação de rua/comunitários;
-            <br />
-            - animais SRD dos moradores da cidade de Ouro Branco.
-            <br />
-          </p>
-          <p>
-            Em 2021 tivemos 4 mutirões organizados pela ONG e castramos cerca de
-            150 cães e gatos.
-          </p>
-          <h2>
             Posso ajudar a ONG Recanto dos Animais em relação as castrações?
           </h2>
           <p>
