@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from '../../utils/theme';
 
 export const Content = styled.div`
   display: flex;
@@ -8,6 +9,11 @@ export const Content = styled.div`
   min-height: 100%;
   justify-content: top;
   align-items: center;
-  margin-top: 13rem;
-  padding: 0rem 4rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    margin-top: 13rem;
+    padding: 0 4rem;
+  }
 `;

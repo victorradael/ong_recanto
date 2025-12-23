@@ -9,27 +9,17 @@ export const Content = styled.div`
   min-height: 100%;
   justify-content: top;
   align-items: center;
-  margin-top: 13rem;
-  padding: 0rem 4rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
 
-  @media (max-width: 1080px) {
-    padding: 0rem 1rem;
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    padding: 0 2rem;
     margin-top: 4rem;
   }
 
-  @media (max-width: 768px) {
-    padding: 0rem 1rem;
-    margin-top: 3rem;
-  }
-
-  @media (max-width: 414px) {
-    padding: 0rem 1rem;
-    margin-top: 2rem;
-  }
-
-  @media (max-width: 376px) {
-    padding: 0rem 1rem;
-    margin-top: 2rem;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    padding: 0 4rem;
+    margin-top: 13rem;
   }
 `;
 
@@ -40,7 +30,8 @@ export const PresentationText = styled.section`
 
   align-items: center;
   justify-content: left;
-  min-width: 600px;
+  width: 100%;
+  max-width: 1080px;
 
   p {
     display: flex;
@@ -49,34 +40,21 @@ export const PresentationText = styled.section`
     margin: 0;
     margin-bottom: 1.6rem;
     padding: 0;
-    max-width: 50rem;
+    width: 100%;
+    max-width: 100%;
 
-    @media (max-width: 1080px) {
-      font-size: 1.3rem;
-      line-height: 1.3rem;
-      padding: 0rem 0rem;
-      max-width: 40rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
+
+    @media (min-width: ${theme.breakpoints.tablet}) {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
     }
 
-    @media (max-width: 768px) {
-      font-size: 1rem;
-      line-height: 1rem;
-      padding: 0rem 0rem;
-      max-width: 30rem;
-    }
-
-    @media (max-width: 414px) {
-      font-size: 0.8rem;
-      line-height: 0.9rem;
-      padding: 0rem 0rem;
-      max-width: 15rem;
-    }
-
-    @media (max-width: 376px) {
-      font-size: 0.8rem;
-      line-height: 0.9rem;
-      padding: 0rem 0rem;
-      max-width: 15rem;
+    @media (min-width: ${theme.breakpoints.desktop}) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      max-width: 50rem;
     }
   }
 
@@ -105,8 +83,15 @@ export const Slider = styled.div`
   overflow-y: hidden;
 
   img {
-    width: 30rem;
-    height: 20rem;
+    width: 15rem; /* Smaller for mobile */
+    height: 10rem;
+    object-fit: cover;
+    margin-right: 10px;
+
+     @media (min-width: ${theme.breakpoints.tablet}) {
+        width: 30rem;
+        height: 20rem; 
+     }
   }
 
   scrollbar-width: thin;
@@ -129,25 +114,19 @@ export const Slider = styled.div`
 `;
 
 export const PlayerCustom = styled.iframe`
-  width: 40vw;
-  height: 60vh;
-  @media (max-width: 1080px) {
-    width: 80vw;
-    height: 60vh;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 240px; 
+  border: none;
+
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    max-width: 768px;
+    height: 432px; /* 16:9 of 768px */
   }
 
-  @media (max-width: 768px) {
-    width: 80vw;
-    height: 80vh;
-  }
-
-  @media (max-width: 414px) {
-    width: 60vw;
-    height: 20vh;
-  }
-
-  @media (max-width: 376px) {
-    width: 60vw;
-    height: 20vh;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    max-width: 900px;
+    height: 506px; /* 16:9 of 900px */
   }
 `;

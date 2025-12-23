@@ -11,57 +11,74 @@ export const Content = styled.div`
 `;
 
 export const ContactCard = styled.a`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: ${theme.colors.primary};
-  -webkit-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
   box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
   margin-top: 0.8rem;
-  padding: 1rem 3rem;
+  padding: 1.5rem;
   border-radius: 0.4rem;
   text-decoration: none;
+  width: 100%;
+  max-width: 300px; /* Limit width on mobile */
 
   svg {
     color: ${theme.colors.brown};
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
   }
 
-  transition: 0.5s;
-
   p {
-    margin: 0 0 0 1rem;
+    margin: 0;
     padding: 0;
     color: ${theme.colors.whiteText};
     font-weight: bold;
-    align-items: center;
     text-align: center;
+    font-size: 1.2rem;
   }
+
+  transition: 0.5s;
 
   &:hover {
     background: ${theme.colors.secondary};
     p {
       color: ${theme.colors.brown};
     }
-
     svg {
       color: ${theme.colors.brown};
     }
   }
 
-  width: 100%;
-
-  @media (min-width: 600px) {
-    p {
-      font-size: 5rem;
-    }
-
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: none;
+    padding: 1rem 3rem;
+    
     svg {
-      height: 5rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
     }
+    
+    p {
+        margin-left: 1rem;
+        text-align: left;
+    }
+  }
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+     /* Restore very large size if originally intended? 
+        The original had p font-size 5rem which is massive. 
+        I'll keep it reasonable but scalable. */
+     p {
+        font-size: 2.5rem;
+     }
+     svg {
+        height: 5rem;
+     }
   }
 `;
