@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './globalStyles.css';
 
 import NavBar from './components/NavBar';
@@ -9,7 +9,7 @@ import LinkTree from './pages/LinkTree';
 import WhyCastrate from './pages/WhyCastrate';
 import HowToHelp from './pages/HowToHelp';
 
-const Routes: React.FC = () => {
+const AppRoutes: React.FC = () => {
   return (
     <Router>
       <NavBar>
@@ -20,22 +20,14 @@ const Routes: React.FC = () => {
           <Link to="/castrar">CASTRAR, POR QUÊ?</Link>
         </div>
       </NavBar>
-      <Switch>
-        <Route exact path="/">
-          <LinkTree />
-        </Route>
-        <Route path="/sobre">
-          <About />
-        </Route>
-        <Route path="/ajudar">
-          <HowToHelp />
-        </Route>
-        <Route path="/castrar">
-          <WhyCastrate />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<LinkTree />} />
+        <Route path="/sobre" element={<About />} />
+        <Route path="/ajudar" element={<HowToHelp />} />
+        <Route path="/castrar" element={<WhyCastrate />} />
+      </Routes>
     </Router>
   );
 };
 
-export default Routes;
+export default AppRoutes;
