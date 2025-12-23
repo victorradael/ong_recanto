@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from '../../utils/theme';
 
 export const Content = styled.div`
@@ -69,47 +69,39 @@ export const Supporters = styled.section`
   flex-direction: column;
 `;
 
+const scroll = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+`;
+
 export const Slider = styled.div`
-  display: flex;
-  margin: 3rem;
-  box-sizing: border-box;
-
-  border-radius: 1rem;
-  margin: 0;
-  margin-bottom: 2rem;
-
   width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: hidden;
+  margin: 3rem 0;
+  margin-bottom: 2rem;
+  background-color: transparent;
+`;
+
+export const SliderTrack = styled.div`
+  display: flex;
+  width: max-content;
+  animation: ${scroll} 50s linear infinite;
+  
+  &:hover {
+    animation-play-state: paused;
+  }
 
   img {
     width: 15rem; /* Smaller for mobile */
     height: 10rem;
     object-fit: cover;
-    margin-right: 10px;
+    margin-right: 1rem;
+    border-radius: 1rem;
 
      @media (min-width: ${theme.breakpoints.tablet}) {
         width: 30rem;
         height: 20rem; 
      }
-  }
-
-  scrollbar-width: thin;
-  scrollbar-color: ${theme.colors.secondary} ${theme.colors.whiteText};
-
-  /* Works on Chrome, Edge, and Safari */
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: ${theme.colors.whiteText};
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${theme.colors.secondary};
-    border-radius: 20px;
-    border: 3px solid ${theme.colors.whiteText};
   }
 `;
 

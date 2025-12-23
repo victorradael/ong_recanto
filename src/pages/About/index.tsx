@@ -16,6 +16,7 @@ import {
   PresentationText,
   Supporters,
   Slider,
+  SliderTrack,
   PlayerCustom,
 } from './styles';
 
@@ -32,13 +33,18 @@ const About: React.FC = () => {
     Image21,
   ];
 
+  // Duplicate images for infinite scroll effect
+  const combinedImages = [...images, ...images];
+
   return (
     <Layout>
       <Content>
         <Slider>
-          {images.map(image => {
-            return <img src={image} alt="" />;
-          })}
+          <SliderTrack>
+            {combinedImages.map((image, index) => {
+              return <img key={index} src={image} alt="" />;
+            })}
+          </SliderTrack>
         </Slider>
         <PresentationText>
           <p>
