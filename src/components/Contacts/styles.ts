@@ -18,16 +18,16 @@ export const ContactCard = styled.a`
   background: ${theme.colors.primary};
   box-shadow: -4px 10px 39px -1px rgba(0, 0, 0, 0.75);
   margin-top: 0.8rem;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 0.4rem;
   text-decoration: none;
-  width: 100%;
-  max-width: 300px; /* Limit width on mobile */
+  width: 90%;
+  max-width: 320px;
 
   svg {
     color: ${theme.colors.brown};
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     margin-bottom: 0.5rem;
   }
 
@@ -37,13 +37,15 @@ export const ContactCard = styled.a`
     color: ${theme.colors.whiteText};
     font-weight: bold;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.2;
   }
 
-  transition: 0.5s;
+  transition: 0.2s ease-in-out;
 
   &:hover {
     background: ${theme.colors.secondary};
+    transform: scale(1.02);
     p {
       color: ${theme.colors.brown};
     }
@@ -54,31 +56,36 @@ export const ContactCard = styled.a`
 
   @media (min-width: ${theme.breakpoints.tablet}) {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    max-width: none;
-    padding: 1rem 3rem;
+    grid-template-columns: 4rem 1fr;
+    max-width: 500px;
+    padding: 1.5rem 2rem;
+    gap: 1.5rem;
+    align-items: center; /* Center vertically */
     
     svg {
-        width: 100%;
-        height: auto;
+        width: 3.5rem; /* Fixed width */
+        height: 3.5rem;
         margin-bottom: 0;
+        justify-self: center;
     }
     
     p {
-        margin-left: 1rem;
+        margin-left: 0;
         text-align: left;
+        font-size: 1.5rem;
     }
   }
 
   @media (min-width: ${theme.breakpoints.desktop}) {
-     /* Restore very large size if originally intended? 
-        The original had p font-size 5rem which is massive. 
-        I'll keep it reasonable but scalable. */
-     p {
-        font-size: 2.5rem;
-     }
+     max-width: 600px;
+     
      svg {
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
+     }
+
+     p {
+        font-size: 1.8rem;
      }
   }
 `;
