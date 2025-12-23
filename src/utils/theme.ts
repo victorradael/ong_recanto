@@ -7,4 +7,9 @@ export default {
     whiteText: '#f7f7f7',
     brown: '#FF5FA0',
   },
+  breakpoints: {
+    mobile: '480px',
+    tablet: '768px',
+    desktop: '1024px',
+  },
 };

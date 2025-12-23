@@ -3,13 +3,16 @@ import theme from '../../../utils/theme';
 
 export const Container = styled.footer`
   background: ${theme.colors.primary};
-
   display: flex;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 4rem 0 0.3rem 0;
+  padding: 2rem 0;
+  
+  @media (min-width: ${theme.breakpoints.tablet}) {
+     padding: 4rem 0 0.3rem 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -19,18 +22,19 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 export const Github = styled.a`
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   padding: 0.3rem 1rem;
   border-radius: 0.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   color: ${theme.colors.whiteText};
+  
   p {
     margin: 0;
     margin-right: 0.4rem;
@@ -39,21 +43,10 @@ export const Github = styled.a`
     max-height: 0rem;
     overflow: hidden;
     transition: max-width 1s ease-in-out;
+    font-size: 0.8rem;
 
-    @media (max-width: 1080px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 414px) {
-      font-size: 0.7rem;
-    }
-
-    @media (max-width: 376px) {
-      font-size: 0.7rem;
+    @media (min-width: ${theme.breakpoints.tablet}) {
+        font-size: 1rem;
     }
   }
 
@@ -81,28 +74,26 @@ export const Github = styled.a`
       background-image: -webkit-linear-gradient(to right, #fc466b, #3f5efb);
     }
   }
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+     /* desktop styles if needed */
+  }
 `;
 
 export const CopyRight = styled.footer`
   color: #fff;
   font-weight: bold;
-
   transition: 0.5s;
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 0 1rem;
 
-  @media (max-width: 1080px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 768px) {
+  @media (min-width: ${theme.breakpoints.tablet}) {
     font-size: 0.85rem;
   }
-
-  @media (max-width: 414px) {
-    font-size: 0.7rem;
-  }
-
-  @media (max-width: 376px) {
-    font-size: 0.7rem;
+  
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    font-size: 1rem;
   }
 
   &:hover {

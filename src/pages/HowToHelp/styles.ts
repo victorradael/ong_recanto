@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import theme from '../../utils/theme';
 
 export const Content = styled.div`
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -11,21 +12,15 @@ export const Content = styled.div`
   padding: 0 1rem;
 
   h2 {
-    @media (max-width: 1080px) {
+    font-size: 1.2rem;
+    text-align: center;
+    @media (min-width: ${theme.breakpoints.tablet}) {
       font-size: 1.8rem;
     }
+  }
 
-    @media (max-width: 768px) {
-      font-size: 1.4rem;
-    }
-
-    @media (max-width: 414px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 376px) {
-      font-size: 1rem;
-    }
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    margin-top: 5rem;
   }
 `;
 
@@ -33,11 +28,12 @@ export const Text = styled.section`
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   align-items: center;
-  justify-content: left;
-  min-width: 600px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1080px;
 
   p {
     display: flex;
@@ -46,71 +42,57 @@ export const Text = styled.section`
     margin: 0;
     margin-bottom: 1.6rem;
     padding: 0;
-    max-width: 50rem;
+    width: 100%;
+    max-width: 100%;
+    
+    font-size: 1rem;
+    line-height: 1.4rem;
 
-    @media (max-width: 1080px) {
+    @media (min-width: ${theme.breakpoints.tablet}) {
       font-size: 1.3rem;
-      line-height: 1.3rem;
-      padding: 0rem 0rem;
-      max-width: 40rem;
+      line-height: 1.6rem;
     }
 
-    @media (max-width: 768px) {
-      font-size: 1rem;
-      line-height: 1rem;
-      padding: 0rem 0rem;
-      max-width: 30rem;
-    }
-
-    @media (max-width: 414px) {
-      font-size: 0.8rem;
-      line-height: 0.9rem;
-      padding: 0rem 0rem;
-      max-width: 15rem;
-    }
-
-    @media (max-width: 376px) {
-      font-size: 0.8rem;
-      line-height: 0.9rem;
-      padding: 0rem 0rem;
-      max-width: 15rem;
+    @media (min-width: ${theme.breakpoints.desktop}) {
+      max-width: 50rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
   }
 
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
 
   box-sizing: border-box;
+
+   @media (min-width: ${theme.breakpoints.desktop}) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
 `;
 
 export const Options = styled.div`
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
 
-  width: 70%;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 2rem;
-  padding: 0rem 8rem;
+  padding: 0 1rem;
 
-  @media (max-width: 1080px) {
-    padding: 0rem 0rem;
-    max-width: 40rem;
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    padding: 0;
   }
 
-  @media (max-width: 768px) {
-    padding: 0rem 0rem;
-    max-width: 30rem;
-  }
-
-  @media (max-width: 414px) {
-    padding: 0rem 0rem;
-    max-width: 15rem;
-  }
-
-  @media (max-width: 376px) {
-    padding: 0rem 0rem;
-    max-width: 15rem;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    width: 70%;
+    padding: 0 8rem;
   }
 `;
 
@@ -125,29 +107,23 @@ export const Pix = styled.div`
     height: 2.5rem;
     width: 7rem;
     margin-bottom: 0.2rem;
+    object-fit: contain;
   }
   div {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 
     p {
       margin: 0;
       padding: 0;
-
-      @media (max-width: 1080px) {
-        font-size: 1rem;
-      }
-
-      @media (max-width: 768px) {
-        font-size: 1rem;
-      }
-
-      @media (max-width: 414px) {
-        font-size: 0.8rem;
-      }
-
-      @media (max-width: 376px) {
-        font-size: 0.8rem;
+      font-size: 0.9rem;
+      text-align: center;
+      
+      @media (min-width: ${theme.breakpoints.tablet}) {
+         font-size: 1rem;
       }
     }
 
@@ -164,11 +140,13 @@ export const Pix = styled.div`
 export const Button = styled.a`
   background-color: #555;
   text-decoration: none;
-  padding: 1.5rem 3rem;
-  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
   background: #7ec2ff;
   color: #fff;
   font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
 
   transition: 0.5s;
 
@@ -180,47 +158,27 @@ export const Button = styled.a`
   -moz-box-shadow: 2px 3px 15px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 3px 15px 0px rgba(0, 0, 0, 0.75);
 
-  @media (max-width: 1080px) {
-    font-size: 1.3rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 414px) {
-    font-size: 1rem;
-    padding: 0.5rem 0.7rem;
-    border-radius: 0.3rem;
-  }
-
-  @media (max-width: 376px) {
-    font-size: 1rem;
-    padding: 0.5rem 0.7rem;
-    border-radius: 0.3rem;
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    font-size: 1.2rem;
+    padding: 1.5rem 3rem;
+    border-radius: 1rem;
   }
 `;
 
 export const PlayerCustom = styled.iframe`
-  width: 40vw;
-  height: 60vh;
-  @media (max-width: 1080px) {
-    width: 80vw;
-    height: 60vh;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 240px; 
+  border: none;
+
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    max-width: 768px;
+    height: 432px; /* 16:9 of 768px */
   }
 
-  @media (max-width: 768px) {
-    width: 80vw;
-    height: 80vh;
-  }
-
-  @media (max-width: 414px) {
-    width: 60vw;
-    height: 20vh;
-  }
-
-  @media (max-width: 376px) {
-    width: 60vw;
-    height: 20vh;
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    max-width: 900px;
+    height: 506px; /* 16:9 of 900px */
   }
 `;

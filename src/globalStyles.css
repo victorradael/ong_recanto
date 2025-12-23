@@ -6,6 +6,7 @@ body {
 
 /* Works on Firefox */
 * {
+  box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: #ff5fa0 #00e8ff;
 }

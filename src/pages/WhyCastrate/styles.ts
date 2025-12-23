@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from '../../utils/theme';
 
 export const Content = styled.div`
   display: flex;
@@ -8,86 +9,76 @@ export const Content = styled.div`
   min-height: 100%;
   justify-content: top;
   align-items: center;
-  margin-top: 6rem;
-  padding: 0rem 4rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
 
-  @media (max-width: 1080px) {
-    padding: 0rem 1rem;
+  @media (min-width: ${theme.breakpoints.tablet}) {
     margin-top: 4rem;
+    padding: 0 4rem;
   }
-
-  @media (max-width: 768px) {
-    padding: 0rem 1rem;
-    margin-top: 3rem;
-  }
-
-  @media (max-width: 414px) {
-    padding: 0rem 1rem;
-    margin-top: 2rem;
-  }
-
-  @media (max-width: 376px) {
-    padding: 0rem 1rem;
-    margin-top: 2rem;
+  
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    margin-top: 6rem;
   }
 `;
 
 export const PresentationText = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 6rem;
-
-  align-items: left;
+  padding: 1rem;
+  align-items: flex-start;
   justify-content: center;
-  min-width: 600px;
+  width: 100%;
+  max-width: 1080px;
+
+  @media (min-width: ${theme.breakpoints.tablet}) {
+     padding: 3rem;
+  }
+  
+  @media (min-width: ${theme.breakpoints.desktop}) {
+     padding: 6rem;
+  }
 
   h2,
   h1 {
     line-height: 2.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   p {
     display: flex;
     margin: 0;
-    text-indent: 3rem;
+    text-indent: 1rem;
     text-align: justify;
     margin-bottom: 0.8rem;
     padding: 0;
-    max-width: 50rem;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.6rem;
 
-    @media (max-width: 1080px) {
-      font-size: 1.3rem;
+    @media (min-width: ${theme.breakpoints.tablet}) {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      text-indent: 3rem;
+    }
+  
+    @media (min-width: ${theme.breakpoints.desktop}) {
+      font-size: 1.5rem;
       line-height: 2rem;
-      padding: 0rem 0rem;
-      max-width: 40rem;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-      line-height: 1.7rem;
-      padding: 0rem 0rem;
-      max-width: 30rem;
-    }
-
-    @media (max-width: 414px) {
-      font-size: 0.8rem;
-      line-height: 1.6rem;
-      padding: 0rem 0rem;
-      max-width: 15rem;
-    }
-
-    @media (max-width: 376px) {
-      font-size: 0.8rem;
-      line-height: 1.6rem;
-      padding: 0rem 0rem;
-      max-width: 15rem;
+      max-width: 50rem;
     }
   }
 
-  font-size: 1.5rem;
-  line-height: 2rem;
-
+  font-size: 1.2rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 `;
 
 export const Supporters = styled.section`
