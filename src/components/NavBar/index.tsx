@@ -17,9 +17,11 @@ const NavBar: React.FC<React.PropsWithChildren> = ({ children }) => {
         onClick={() => setOpen(o => !o)}
         $open={open}
       >
-        <span />
-        <span />
-        <span />
+        <span aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </span>
       </HamburgerBtn>
       <NavMenu $open={open} onClick={() => setOpen(false)}>
         {children}
