@@ -20,7 +20,7 @@ export const Content = styled.div`
 export const PageTitle = styled.h1`
   font-size: clamp(1.6rem, 5vw, 2.2rem);
   font-weight: 700;
-  color: #1a1a2e;
+  color: ${theme.colors.ink};
   margin-bottom: 1.5rem;
 `;
 
@@ -28,7 +28,7 @@ export const TransparencyBox = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  background: #e8f8fa;
+  background: ${theme.colors.surfaceTint};
   border-left: 4px solid ${theme.colors.primary};
   border-radius: 0.5rem;
   padding: 1.2rem 1.4rem;
@@ -36,7 +36,7 @@ export const TransparencyBox = styled.div`
 
   svg {
     font-size: 1.6rem;
-    color: ${theme.colors.primary};
+    color: ${theme.colors.primaryText};
     flex-shrink: 0;
     margin-top: 0.1rem;
   }
@@ -66,7 +66,7 @@ export const SectionTitle = styled.h2`
   gap: 0.5rem;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: ${theme.colors.ink};
   margin-bottom: 1rem;
 
   img {
@@ -76,7 +76,7 @@ export const SectionTitle = styled.h2`
 
   svg {
     font-size: 1.1rem;
-    color: ${theme.colors.primary};
+    color: ${theme.colors.primaryText};
   }
 
   @media (min-width: ${theme.breakpoints.tablet}) {
@@ -85,8 +85,8 @@ export const SectionTitle = styled.h2`
 `;
 
 export const PixCard = styled.div`
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: ${theme.colors.surface};
+  border: 1px solid ${theme.colors.border};
   border-radius: 0.8rem;
   padding: 1.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -120,7 +120,7 @@ export const PixLogo = styled.img`
 export const CopyBtn = styled.button`
   position: relative;
   background: ${theme.colors.primary};
-  color: #000;
+  color: ${theme.colors.ink};
   border: none;
   border-radius: 2rem;
   padding: 0.5rem 1.2rem;
@@ -130,12 +130,12 @@ export const CopyBtn = styled.button`
   transition: background 0.2s, transform 0.15s;
 
   &:hover {
-    background: #00c8db;
+    background: ${theme.colors.primaryDark};
     transform: translateY(-1px);
   }
 
   &:focus-visible {
-    outline: 3px solid #00e8ff;
+    outline: 3px solid ${theme.colors.primaryText};
     outline-offset: 3px;
   }
 `;
@@ -146,7 +146,7 @@ export const CopyFeedback = styled.span`
   left: 50%;
   transform: translateX(-50%);
   background: #000;
-  color: #00e8ff;
+  color: ${theme.colors.primary};
   font-size: 0.75rem;
   padding: 0.25rem 0.6rem;
   border-radius: 0.3rem;
@@ -155,8 +155,8 @@ export const CopyFeedback = styled.span`
 `;
 
 export const BankCard = styled.div`
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: ${theme.colors.surface};
+  border: 1px solid ${theme.colors.border};
   border-radius: 0.8rem;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -202,7 +202,7 @@ export const ItemsList = styled.ul`
 
     &::before {
       content: '→';
-      color: ${theme.colors.primary};
+      color: ${theme.colors.primaryText};
       font-weight: 700;
       flex-shrink: 0;
     }
@@ -210,8 +210,8 @@ export const ItemsList = styled.ul`
 `;
 
 export const VolunteerCard = styled.div`
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: ${theme.colors.surface};
+  border: 1px solid ${theme.colors.border};
   border-radius: 0.8rem;
   padding: 1.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -228,8 +228,8 @@ export const VolunteerLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #25d366;
-  color: #fff;
+  background: ${theme.colors.whatsapp};
+  color: ${theme.colors.whiteText};
   text-decoration: none;
   padding: 0.7rem 1.5rem;
   border-radius: 2rem;
@@ -242,12 +242,12 @@ export const VolunteerLink = styled.a`
   }
 
   &:hover {
-    background: #1db954;
+    background: ${theme.colors.whatsappHover};
     transform: translateY(-1px);
   }
 
   &:focus-visible {
-    outline: 3px solid #25d366;
+    outline: 3px solid ${theme.colors.whatsapp};
     outline-offset: 3px;
   }
 `;

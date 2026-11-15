@@ -27,7 +27,7 @@ export const TopBar = styled.div`
   h1 {
     font-size: 1.2rem;
     font-weight: 400;
-    color: ${theme.colors.whiteText};
+    color: ${theme.colors.ink};
     text-align: center;
     margin-top: 1rem;
     line-height: 1.4;

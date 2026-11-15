@@ -9,7 +9,7 @@ export const Container = styled.footer`
   align-items: center;
   width: 100%;
   padding: 2rem 0;
-  
+
   @media (min-width: ${theme.breakpoints.tablet}) {
      padding: 4rem 0 0.3rem 0;
   }
@@ -33,8 +33,8 @@ export const Github = styled.a`
   padding: 0.3rem 1rem;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
-  color: ${theme.colors.whiteText};
-  
+  color: ${theme.colors.ink};
+
   p {
     margin: 0;
     margin-right: 0.4rem;
@@ -63,15 +63,15 @@ export const Github = styled.a`
       pointer-events: none;
     }
 
-    background-image: linear-gradient(to right, #fc466b, #3f5efb);
-    background-image: -webkit-linear-gradient(to right, #fc466b, #3f5efb);
+    background-image: linear-gradient(to right, ${theme.colors.accent}, ${theme.colors.primary});
+    background-image: -webkit-linear-gradient(to right, ${theme.colors.accent}, ${theme.colors.primary});
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     svg {
-      background-image: linear-gradient(to right, #fc466b, #3f5efb);
-      background-image: -webkit-linear-gradient(to right, #fc466b, #3f5efb);
+      background-image: linear-gradient(to right, ${theme.colors.accent}, ${theme.colors.primary});
+      background-image: -webkit-linear-gradient(to right, ${theme.colors.accent}, ${theme.colors.primary});
     }
   }
 
@@ -81,7 +81,7 @@ export const Github = styled.a`
 `;
 
 export const CopyRight = styled.footer`
-  color: #fff;
+  color: ${theme.colors.ink};
   font-weight: bold;
   transition: 0.5s;
   font-size: 0.7rem;
@@ -91,15 +91,14 @@ export const CopyRight = styled.footer`
   @media (min-width: ${theme.breakpoints.tablet}) {
     font-size: 0.85rem;
   }
-  
+
   @media (min-width: ${theme.breakpoints.desktop}) {
     font-size: 1rem;
   }
 
   &:hover {
-    background-image: linear-gradient(to right, #3f5efb, #fc466b);
-    background-image: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
-    color: black;
+    background-image: linear-gradient(to right, ${theme.colors.primary}, ${theme.colors.accent});
+    background-image: -webkit-linear-gradient(to right, ${theme.colors.primary}, ${theme.colors.accent});
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

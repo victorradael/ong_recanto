@@ -37,7 +37,7 @@ export const NavContainer = styled.nav`
       background: transparent;
       border: none;
       cursor: pointer;
-      color: #000;
+      color: ${theme.colors.ink};
       text-align: center;
       font-weight: 700;
       transition: 0.2s;

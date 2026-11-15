@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from '../../utils/theme';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -11,7 +12,7 @@ export const Wrapper = styled.div`
   max-width: 800px;
 
   &:focus-visible {
-    outline: 3px solid #00e8ff;
+    outline: 3px solid ${theme.colors.primaryText};
     outline-offset: 2px;
   }
 
