@@ -28,12 +28,15 @@ import Image19 from '../../assets/images/19.jpeg';
 import Image21 from '../../assets/images/21.jpeg';
 
 import PixLogo from '../../assets/pixLogo.png';
+import LogoImage from '../../assets/logo.svg';
 import VideoFacade from '../../components/VideoFacade';
 import Footer from '../../components/Layout/Footer';
 
 import {
   PageWrapper,
   HeroSection,
+  HeroLogo,
+  HeroOrgName,
   HeroContent,
   HeroHeadline,
   HeroSub,
@@ -126,6 +129,8 @@ const Home: React.FC = () => {
       {/* Hero */}
       <HeroSection>
         <HeroContent>
+          <HeroLogo src={LogoImage} alt="ONG Recanto dos Animais" />
+          <HeroOrgName>ONG Recanto dos Animais</HeroOrgName>
           <HeroHeadline>
             Cada resgate começa com alguém que não virou as costas.
           </HeroHeadline>

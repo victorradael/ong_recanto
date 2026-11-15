@@ -11,32 +11,93 @@ export const PageWrapper = styled.div`
 /* ── Hero ─────────────────────────────────────────────────────────────── */
 export const HeroSection = styled.section`
   width: 100%;
-  min-height: 70vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(160deg, #0b2733 0%, #07404f 100%);
+  background: radial-gradient(ellipse 90% 70% at 50% 38%, #0f3a4d 0%, #07404f 55%, #061e27 100%);
+  position: relative;
+  overflow: hidden;
+
+  /* decorative concentric rings */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 232, 255, 0.09);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  &::before {
+    width: clamp(28rem, 70vw, 52rem);
+    height: clamp(28rem, 70vw, 52rem);
+  }
+
+  &::after {
+    width: clamp(16rem, 42vw, 32rem);
+    height: clamp(16rem, 42vw, 32rem);
+    border-color: rgba(0, 232, 255, 0.14);
+  }
+`;
+
+export const HeroLogo = styled.img`
+  display: block;
+  height: clamp(7rem, 22vw, 11rem);
+  width: auto;
+  margin: 0 auto 0.75rem;
+  filter: drop-shadow(0 0 2.5rem rgba(0, 232, 255, 0.28));
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: heroFadeIn 0.55s ease-out;
+  }
+
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+export const HeroOrgName = styled.p`
+  font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00e8ff;
+  margin: 0 0 1.75rem;
+  opacity: 0.9;
 `;
 
 export const HeroContent = styled.div`
-  max-width: 800px;
-  padding: 4rem 1.5rem 3rem;
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  padding: 5rem 1.5rem 4rem;
   text-align: center;
   color: #fff;
 `;
 
 export const HeroHeadline = styled.h1`
-  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  font-size: clamp(1.5rem, 4.5vw, 2.6rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   margin: 0 0 1rem;
 `;
 
 export const HeroSub = styled.p`
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  line-height: 1.6;
-  margin: 0 0 2rem;
-  opacity: 0.92;
+  font-size: clamp(0.95rem, 2.3vw, 1.2rem);
+  line-height: 1.7;
+  margin: 0 0 2.2rem;
+  opacity: 0.88;
 `;
 
 export const HeroActions = styled.div`

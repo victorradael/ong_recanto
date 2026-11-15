@@ -59,12 +59,12 @@ export const NavContainer = styled.nav`
 `;
 
 export const NavLogo = styled.img`
-  height: 3rem;
+  height: 2rem;
   width: auto;
   object-fit: contain;
   display: block;
 
   @media (min-width: ${theme.breakpoints.tablet}) {
-    height: 3.5rem;
+    height: 2.2rem;
   }
 `;
