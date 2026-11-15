@@ -4,23 +4,31 @@ import theme from '../../utils/theme';
 
 export const NavContainer = styled.nav`
   display: flex;
+  align-items: center;
   background: ${theme.colors.primary};
   width: 100%;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 0.6rem 1.5rem;
+  gap: 1.5rem;
+
+  > a {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
 
   div {
     width: 100%;
     max-width: 1080px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    padding: 0.8rem;
-    gap: 1rem;
+    padding: 0.4rem 0;
+    gap: 0.8rem;
 
     @media (min-width: ${theme.breakpoints.tablet}) {
       flex-direction: row;
-      justify-content: center; /* Or space-between/flex-start depending on desired look */
+      justify-content: flex-end;
       gap: 0;
     }
 
@@ -29,23 +37,34 @@ export const NavContainer = styled.nav`
       background: transparent;
       border: none;
       cursor: pointer;
-      color: ${theme.colors.whiteText};
+      color: #000;
       text-align: center;
       font-weight: 700;
       transition: 0.2s;
-      font-size: 1rem; /* Base size for mobile */
+      font-size: 0.95rem;
 
       @media (min-width: ${theme.breakpoints.tablet}) {
         margin-right: 2rem;
-        
+
         &:last-child {
           margin-right: 0;
         }
       }
 
       &:hover {
-        color: ${theme.colors.secondaryLight};
+        opacity: 0.7;
       }
     }
+  }
+`;
+
+export const NavLogo = styled.img`
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+  display: block;
+
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    height: 3.5rem;
   }
 `;

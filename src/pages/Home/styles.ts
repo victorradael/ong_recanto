@@ -10,37 +10,15 @@ export const PageWrapper = styled.div`
 
 /* ── Hero ─────────────────────────────────────────────────────────────── */
 export const HeroSection = styled.section`
-  position: relative;
   width: 100%;
   min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-
-  > img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-`;
-
-export const HeroOverlay = styled.div`
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 50, 60, 0.6) 100%
-  );
+  background: linear-gradient(160deg, #0b2733 0%, #07404f 100%);
 `;
 
 export const HeroContent = styled.div`
-  position: relative;
-  z-index: 1;
   max-width: 800px;
   padding: 4rem 1.5rem 3rem;
   text-align: center;

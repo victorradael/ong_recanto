@@ -17,7 +17,6 @@ import {
   FaChevronRight,
 } from 'react-icons/fa';
 
-import HeroImg from '../../assets/images/9.jpeg';
 import Image7 from '../../assets/images/7.jpeg';
 import Image9 from '../../assets/images/9.jpeg';
 import Image10 from '../../assets/images/10.jpeg';
@@ -35,7 +34,6 @@ import Footer from '../../components/Layout/Footer';
 import {
   PageWrapper,
   HeroSection,
-  HeroOverlay,
   HeroContent,
   HeroHeadline,
   HeroSub,
@@ -127,14 +125,6 @@ const Home: React.FC = () => {
     <PageWrapper>
       {/* Hero */}
       <HeroSection>
-        <img
-          src={HeroImg}
-          alt="Animal resgatado pela ONG Recanto dos Animais, olhando para a câmera"
-          fetchPriority="high"
-          loading="eager"
-          aria-hidden="true"
-        />
-        <HeroOverlay />
         <HeroContent>
           <HeroHeadline>
             Cada resgate começa com alguém que não virou as costas.
