@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ongrecantodosanimais.com.br/sitemap.xml
