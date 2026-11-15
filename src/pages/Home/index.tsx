@@ -35,6 +35,7 @@ import Footer from '../../components/Layout/Footer';
 import {
   PageWrapper,
   HeroSection,
+  HeroLogoWrapper,
   HeroLogo,
   HeroOrgName,
   HeroContent,
@@ -129,7 +130,9 @@ const Home: React.FC = () => {
       {/* Hero */}
       <HeroSection>
         <HeroContent>
-          <HeroLogo src={LogoImage} alt="ONG Recanto dos Animais" />
+          <HeroLogoWrapper>
+            <HeroLogo src={LogoImage} alt="ONG Recanto dos Animais" />
+          </HeroLogoWrapper>
           <HeroOrgName>ONG Recanto dos Animais</HeroOrgName>
           <HeroHeadline>
             Cada resgate começa com alguém que não virou as costas.

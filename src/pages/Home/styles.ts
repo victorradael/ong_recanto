@@ -11,77 +11,113 @@ export const PageWrapper = styled.div`
 /* ── Hero ─────────────────────────────────────────────────────────────── */
 export const HeroSection = styled.section`
   width: 100%;
-  min-height: 88vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse 90% 70% at 50% 38%, #0f3a4d 0%, #07404f 55%, #061e27 100%);
+  background: radial-gradient(ellipse 100% 80% at 50% 30%, #0f4a62 0%, #07404f 50%, #040f14 100%);
   position: relative;
   overflow: hidden;
 
-  /* decorative concentric rings */
-  &::before,
+  /* outer decorative ring */
+  &::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 232, 255, 0.07);
+    width: clamp(32rem, 80vw, 60rem);
+    height: clamp(32rem, 80vw, 60rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    pointer-events: none;
+  }
+
+  /* inner decorative ring */
   &::after {
     content: '';
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(0, 232, 255, 0.09);
+    border: 1px solid rgba(0, 232, 255, 0.12);
+    width: clamp(20rem, 52vw, 38rem);
+    height: clamp(20rem, 52vw, 38rem);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -52%);
     pointer-events: none;
   }
+`;
 
+export const HeroLogoWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  width: clamp(14rem, 38vw, 20rem);
+  height: clamp(14rem, 38vw, 20rem);
+
+  /* glowing disc behind logo */
   &::before {
-    width: clamp(28rem, 70vw, 52rem);
-    height: clamp(28rem, 70vw, 52rem);
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(0, 232, 255, 0.18) 0%,
+      rgba(0, 232, 255, 0.07) 45%,
+      transparent 72%
+    );
+    pointer-events: none;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: logoPulse 3.2s ease-in-out infinite;
+    }
   }
 
-  &::after {
-    width: clamp(16rem, 42vw, 32rem);
-    height: clamp(16rem, 42vw, 32rem);
-    border-color: rgba(0, 232, 255, 0.14);
+  @keyframes logoPulse {
+    0%, 100% { opacity: 0.75; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.06); }
   }
 `;
 
 export const HeroLogo = styled.img`
-  display: block;
-  height: clamp(7rem, 22vw, 11rem);
+  position: relative;
+  z-index: 1;
+  height: clamp(10rem, 28vw, 15rem);
   width: auto;
-  margin: 0 auto 0.75rem;
-  filter: drop-shadow(0 0 2.5rem rgba(0, 232, 255, 0.28));
+  display: block;
+  filter:
+    drop-shadow(0 0 1.2rem rgba(0, 232, 255, 0.55))
+    drop-shadow(0 0 3rem rgba(0, 232, 255, 0.28))
+    drop-shadow(0 0 6rem rgba(0, 232, 255, 0.12));
 
   @media (prefers-reduced-motion: no-preference) {
-    animation: heroFadeIn 0.55s ease-out;
+    animation: heroFadeIn 0.7s ease-out;
   }
 
   @keyframes heroFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: scale(0.9) translateY(-8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
   }
 `;
 
 export const HeroOrgName = styled.p`
-  font-size: clamp(0.85rem, 2.2vw, 1.1rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: clamp(1rem, 2.8vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #00e8ff;
-  margin: 0 0 1.75rem;
-  opacity: 0.9;
+  margin: 0 0 1.5rem;
+  text-shadow: 0 0 1.5rem rgba(0, 232, 255, 0.5);
 `;
 
 export const HeroContent = styled.div`
   position: relative;
   z-index: 1;
   max-width: 820px;
-  padding: 5rem 1.5rem 4rem;
+  padding: 4rem 1.5rem 4rem;
   text-align: center;
   color: #fff;
 `;
