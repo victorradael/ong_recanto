@@ -1,0 +1,19 @@
+import styled from 'styled-components';
+import theme from '../../utils/theme';
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  min-height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    margin-top: 13rem;
+    padding: 0 4rem;
+  }
+`;

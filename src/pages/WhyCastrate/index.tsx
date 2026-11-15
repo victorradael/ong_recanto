@@ -1,117 +1,229 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaChevronDown, FaWhatsapp } from 'react-icons/fa';
 
+import pixLogo from '../../assets/pixLogo.png';
 import Layout from '../../components/Layout';
+import {
+  Content,
+  PageTitle,
+  Lead,
+  TocList,
+  TocItem,
+  AccordionList,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  CtaSection,
+  CtaTitle,
+  CtaActions,
+  PixBtn,
+  WhatsappBtn,
+  Disclaimer,
+} from './styles';
 
-import { Content, PresentationText } from './styles';
+const PIX_KEY = '16928787000196';
+const WHATSAPP_URL = 'https://wa.me/5531984912135';
 
-const About: React.FC = () => {
+interface FaqItem {
+  id: string;
+  question: string;
+  answer: React.ReactNode;
+}
+
+const faq: FaqItem[] = [
+  {
+    id: 'saude',
+    question: 'Quais são os benefícios para a saúde do animal?',
+    answer: (
+      <>
+        <p>
+          A castração é a forma mais eficaz de prevenir tumores no sistema
+          reprodutivo — ovários, útero e mamas nas fêmeas; próstata nos machos.
+          Também elimina o risco de infecções uterinas (piometra), uma das
+          emergências mais perigosas em cadelas e gatas.
+        </p>
+        <p>
+          Fêmeas castradas antes do primeiro cio têm risco significativamente
+          menor de desenvolver tumores mamários ao longo da vida, segundo
+          estudos veterinários. Para dados atualizados, consulte seu médico
+          veterinário.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'rua',
+    question: 'Por que a castração ajuda os animais de rua?',
+    answer: (
+      <p>
+        Cada ninhada não planejada aumenta o número de animais abandonados. Ao
+        castrar cães e gatos SRD (sem raça definida), reduzimos diretamente a
+        superpopulação de rua — e, com isso, o sofrimento de animais que
+        nascem sem lar.
+      </p>
+    ),
+  },
+  {
+    id: 'cirurgia',
+    question: 'Como é a cirurgia?',
+    answer: (
+      <p>
+        A castração é uma cirurgia feita sob anestesia geral. Em machos, é um
+        procedimento simples e rápido. Em fêmeas, dura um pouco mais por causa
+        do posicionamento dos órgãos. O corte pode ser no baixo ventre ou na
+        lateral, dependendo da técnica. É um procedimento seguro quando
+        realizado por médico veterinário em ambiente adequado.
+      </p>
+    ),
+  },
+  {
+    id: 'recuperacao',
+    question: 'Como é a recuperação?',
+    answer: (
+      <p>
+        O veterinário costuma prescrever anti-inflamatório, antibiótico e
+        analgésico. É preciso evitar que o animal lamba os pontos — colar
+        elisabetano ou roupinha cirúrgica ajudam. O animal deve ficar em
+        ambiente tranquilo nos primeiros dias. Alimentação normal, salvo
+        indicação do veterinário.
+      </p>
+    ),
+  },
+  {
+    id: 'idade',
+    question: 'Qual a melhor idade para castrar?',
+    answer: (
+      <p>
+        Em geral, a partir dos seis meses de idade. Não é preciso esperar o
+        primeiro cio das fêmeas — isso é um mito. Filhotes precisam de menos
+        anestesia e se recuperam mais rápido. Não há idade máxima, mas quanto
+        mais idoso o animal, maior a necessidade de avaliar os riscos com o
+        veterinário.
+      </p>
+    ),
+  },
+  {
+    id: 'custo',
+    question: 'Quanto custa a castração?',
+    answer: (
+      <p>
+        O valor varia conforme a clínica, o porte e o sexo do animal. Fêmeas
+        costumam ser mais caras que machos por demandarem mais tempo de
+        cirurgia. Animais com doenças pré-existentes podem ter custo maior.
+        Peça orçamento diretamente ao veterinário.
+      </p>
+    ),
+  },
+  {
+    id: 'ajudar',
+    question: 'Como posso ajudar a ONG com as castrações?',
+    answer: (
+      <p>
+        Suas doações financiam diretamente os mutirões de castração da Recanto.
+        Você pode contribuir via Pix (CNPJ 16.928.787/0001-96) ou transferência
+        para o Banco do Brasil AG 2372-8 CC 24695-6. Cada cirurgia financiada
+        significa um animal a menos nas ruas.
+      </p>
+    ),
+  },
+];
+
+const WhyCastrate: React.FC = () => {
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Castrar, por quê? — ONG Recanto dos Animais';
+  }, []);
+
+  const toggle = (id: string) => setOpenId((prev) => (prev === id ? null : id));
+
+  const copyPix = async () => {
+    try {
+      await navigator.clipboard.writeText(PIX_KEY);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      setCopied(false);
+    }
+  };
+
   return (
     <Layout>
       <Content>
-        <PresentationText>
-          <h1>Por que devo castrar meus cachorros e gatos?</h1>
-          <p>
-            Quando falamos em castração, o primeiro pensamento que vem é o
-            controle reprodutivo dos animais, principalmente das fêmeas. Mas a
-            castração é, principalmente, a forma mais eficaz de prevenir doenças
-            sérias como tumores nas mamas, ovários e próstatas, infecções e
-            doenças venéreas, sobretudo quando o tutor decide castrar seu
-            bichinho precocemente.
-          </p>
-          <p>
-            Quando falamos de cachorros e gatos SRD (sem raça definida) é,
-            realmente, muito importante pensarmos no controle reprodutivo dos
-            animais como forma de prevenir o aumento da população dos animais de
-            rua e para combater as práticas de abandono das crias não
-            planejadas.
-          </p>
-          <h2>Como a castração é realizada?</h2>
-          <p>
-            A castração, também chamada de esterilização, é uma cirurgia que tem
-            por finalidade a retirada dos órgãos sexuais dos machos e das
-            fêmeas. Dos animais machos são retirados os testículos e das fêmeas
-            são retirados os ovários e o útero. O procedimento em cães e gatos
-            machos é muito simples e rápido. Já nas fêmeas pode demorar um pouco
-            mais devido ao posicionamento dos órgãos reprodutivos e os cortes
-            podem ser tanto na parte baixa do abdômen quanto na lateral. Tudo é
-            feito com anestesia geral e exige cuidados simples no pós
-            operatório.
-          </p>
-          <h2>Como é a recuperação do animal?</h2>
-          <p>
-            Da mesma forma que todas as demais cirurgias, a castração exige
-            alguns cuidados no pós operatório. Normalmente é prescrito pelo
-            médico veterinário um anti-inflamatório, um antibiótico e um remédio
-            para dor e é necessário a continuidade desses medicamentos em casa.
-            Além disso, os tutores ou responsáveis devem evitar que o animal
-            morda ou lamba o local dos pontos. Para isso, pode-se utilizar
-            roupinhas cirúrgicas ou o colar elisabetano no pescoço. É
-            importante, ainda, que o animal fique em um local tranquilo e não se
-            agite nem se esforce para não prejudicar a sua recuperação. Quanto a
-            alimentação, não há necessidade de mudanças, a não ser por algum
-            motivo indicado pelo veterinário.
-          </p>
-          <h2>Qual o valor da castração?</h2>
-          <p>
-            O valor da castração depende de uma série de fatores, como a clínica
-            veterinária escolhida, a sua localização, o sexo, tamanho e a saúde
-            do animal. Se o animal apresenta alguma doença, por exemplo, a
-            castração pode ficar mais cara.
-          </p>
-          <p>
-            O tamanho do animal interfere na quantidade de anestesia aplicada e,
-            depende da forma de aplicação, se será injetável ou inalatória. O
-            sexo do animal interfere, também, pois as fêmeas, por exemplo, são
-            mais caras que machos pelo fato de demandarem mais tempo de
-            cirurgia.
-          </p>
-          <h2>Quando devo castrar meus bichinhos?</h2>
-          <p>
-            Os animais podem ser castrados antes da maturidade sexual, que
-            acontece em torno dos seis meses de vida. Muitos acreditam que
-            precisam aguardar o primeiro cio das fêmeas, mas isso não precisa
-            acontecer. A castração em filhotes tem como vantagem o fato deles
-            necessitarem de menores doses de anestésicos e, devido a isso, sua
-            recuperação acontece de maneira mais rápida e eficaz. Não há uma
-            idade máxima para a castração dos animais porém, quanto mais tarde,
-            maior o risco da cirurgia. É de suma importância considerar a idade
-            e a saúde do bichinho para saber se os benefícios da castração são
-            maiores que o risco.
-          </p>
-          <p>
-            Vale ressaltar que as fêmeas não castradas têm 3x mais chances de
-            sofrer de câncer de ovário, mama e útero do que as fêmeas castradas
-            quando novas. O mesmo vale para os machos não castrados em relação
-            ao câncer de próstata.
-          </p>
-          <h2>
-            Posso ajudar a ONG Recanto dos Animais em relação as castrações?
-          </h2>
-          <p>
-            Você pode nos ajudar com doações através de transferência ou PIX
-            para a conta da ONG.
-          </p>
-          <p>
-            BANCO DO BRASIL
-            <br />
-            AG: 2372-8
-            <br />
-            CC: 24695-6
-            <br />
-            Recanto dos animais <br />
-            CNPJ: 16.928.787/0001-96 (PIX)
-          </p>
+        <PageTitle>Por que castrar?</PageTitle>
+        <Lead>
+          Castrar é um dos atos mais responsáveis que um tutor pode fazer — e um
+          dos mais eficazes para reduzir o abandono. Tire suas dúvidas abaixo.
+        </Lead>
 
+        <TocList aria-label="Ir para a pergunta">
+          {faq.map((item) => (
+            <TocItem key={item.id}>
+              <a href={`#${item.id}`} onClick={() => setOpenId(item.id)}>
+                {item.question}
+              </a>
+            </TocItem>
+          ))}
+        </TocList>
+
+        <AccordionList>
+          {faq.map((item) => {
+            const isOpen = openId === item.id;
+            return (
+              <AccordionItem key={item.id} id={item.id}>
+                <AccordionButton
+                  aria-expanded={isOpen}
+                  aria-controls={`panel-${item.id}`}
+                  onClick={() => toggle(item.id)}
+                  $open={isOpen}
+                >
+                  {item.question}
+                  <FaChevronDown aria-hidden="true" />
+                </AccordionButton>
+                <AccordionPanel
+                  id={`panel-${item.id}`}
+                  role="region"
+                  aria-labelledby={item.id}
+                  hidden={!isOpen}
+                >
+                  {item.answer}
+                </AccordionPanel>
+              </AccordionItem>
+            );
+          })}
+        </AccordionList>
+
+        <Disclaimer>
+          A castração é um procedimento cirúrgico e deve ser realizada por
+          médico veterinário em ambiente apropriado. Consulte um profissional
+          antes de tomar qualquer decisão.
+        </Disclaimer>
+
+        <CtaSection>
+          <CtaTitle>Ajude a custear uma castração</CtaTitle>
           <p>
-            <b>
-              Precisamos ressaltar que a castração é um procedimento cirúrgico e
-              deve ser realizado por médico veterinário em ambiente apropriado.
-            </b>
+            Cada doação financia diretamente nossos mutirões de castração em
+            Ouro Branco e região.
           </p>
-        </PresentationText>
+          <CtaActions>
+            <PixBtn onClick={copyPix} aria-live="polite">
+              <img src={pixLogo} alt="" aria-hidden="true" />
+              {copied ? 'Chave copiada!' : 'Copiar chave Pix'}
+            </PixBtn>
+            <WhatsappBtn
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp aria-hidden="true" />
+              Falar no WhatsApp
+            </WhatsappBtn>
+          </CtaActions>
+        </CtaSection>
       </Content>
     </Layout>
   );
 };
 
-export default About;
+export default WhyCastrate;
