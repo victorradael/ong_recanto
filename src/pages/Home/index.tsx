@@ -205,7 +205,7 @@ const Home: React.FC = () => {
           <DonationCard>
             <FaHeart aria-hidden="true" />
             <h3>Ração e banho<sup style={{ fontSize: '0.65em', verticalAlign: 'super', marginLeft: '1px' }}>*</sup></h3>
-            <p><em>* Custeados diretamente pelos voluntários que abrigam os animais em seus lares.</em></p>
+            <p><em>Custeados diretamente pelos voluntários que abrigam os animais em seus lares.</em></p>
           </DonationCard>
         </DonationGrid>
       </Section>
