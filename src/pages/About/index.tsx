@@ -73,38 +73,46 @@ const About: React.FC = () => {
           <h2>Apoiadores: </h2>
 
           <PlayerCustom
-            src="https://www.youtube.com/embed/pLAbEV3z-ck"
+            src="https://www.youtube-nocookie.com/embed/pLAbEV3z-ck"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
           <h3>Matheus Abreu</h3>
 
           <PlayerCustom
-            src="https://www.youtube.com/embed/gutFlQmNz1M"
+            src="https://www.youtube-nocookie.com/embed/gutFlQmNz1M"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
           <h3>Pedro Alves</h3>
 
           <PlayerCustom
-            src="https://www.youtube.com/embed/jKEqF824D48"
+            src="https://www.youtube-nocookie.com/embed/jKEqF824D48"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
           <h3>José Loreto</h3>
 
           <PlayerCustom
-            src="https://www.youtube.com/embed/Nlh4tXQH6mE"
+            src="https://www.youtube-nocookie.com/embed/Nlh4tXQH6mE"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
           <h3>Kaysar Dadour</h3>
         </Supporters>

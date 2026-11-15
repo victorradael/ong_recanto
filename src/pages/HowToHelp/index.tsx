@@ -1,5 +1,4 @@
 import React from 'react';
-import {} from 'react-icons/ai';
 
 import pixLogo from '../../assets/pixLogo.png';
 import Layout from '../../components/Layout';
@@ -33,7 +32,14 @@ const HowToHelp: React.FC = () => {
           </p>
         </Text>
 
-        <PlayerCustom src="https://www.youtube.com/embed/J1mCHyRHW6U" />
+        <PlayerCustom
+          src="https://www.youtube-nocookie.com/embed/J1mCHyRHW6U"
+          title="YouTube video player"
+          allow="clipboard-write; encrypted-media; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
         <h2>Como ajudar:</h2>
 
         <Pix>

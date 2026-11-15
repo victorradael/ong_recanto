@@ -1,13 +1,12 @@
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
 
-import { Container, Content, Github, CopyRight } from './styles';
+import { Container, Content, CopyRight } from './styles';
 
 const Footer: React.FC = () => {
   return (
     <Container>
       <Content>
-        {/* <Github href="https://github.com/victorradael" target="blank">
+        {/* <Github href="https://github.com/victorradael" target="_blank" rel="noopener noreferrer">
           <p>Desenvolvido por Victor Radael</p>
           <FaGithub size="1.2rem" />
         </Github> */}
