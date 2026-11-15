@@ -68,7 +68,7 @@ export const StorySection = styled.section`
   p {
     font-size: 1rem;
     line-height: 1.7;
-    color: #333;
+    color: ${theme.colors.inkSoft};
     margin-bottom: 1.2rem;
 
     @media (min-width: ${theme.breakpoints.tablet}) {
@@ -80,7 +80,7 @@ export const StorySection = styled.section`
 export const SectionHeading = styled.h2`
   font-size: 1.3rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: ${theme.colors.ink};
   margin: 1.5rem 0 0.8rem;
 
   @media (min-width: ${theme.breakpoints.tablet}) {
@@ -112,7 +112,7 @@ export const SupporterLabel = styled.div`
 
   strong {
     font-size: 1rem;
-    color: #1a1a2e;
+    color: ${theme.colors.ink};
   }
 
   span {

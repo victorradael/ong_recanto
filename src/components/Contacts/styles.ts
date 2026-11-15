@@ -25,7 +25,7 @@ export const ContactCard = styled.a`
   max-width: 320px;
 
   svg {
-    color: ${theme.colors.brown};
+    color: ${theme.colors.ink};
     width: 2.5rem;
     height: 2.5rem;
     margin-bottom: 0.5rem;
@@ -34,7 +34,7 @@ export const ContactCard = styled.a`
   p {
     margin: 0;
     padding: 0;
-    color: ${theme.colors.whiteText};
+    color: ${theme.colors.ink};
     font-weight: bold;
     text-align: center;
     font-size: 1.1rem;
@@ -47,10 +47,10 @@ export const ContactCard = styled.a`
     background: ${theme.colors.secondary};
     transform: scale(1.02);
     p {
-      color: ${theme.colors.brown};
+      color: ${theme.colors.ink};
     }
     svg {
-      color: ${theme.colors.brown};
+      color: ${theme.colors.ink};
     }
   }
 
@@ -61,14 +61,14 @@ export const ContactCard = styled.a`
     padding: 1.5rem 2rem;
     gap: 1.5rem;
     align-items: center; /* Center vertically */
-    
+
     svg {
         width: 3.5rem; /* Fixed width */
         height: 3.5rem;
         margin-bottom: 0;
         justify-self: center;
     }
-    
+
     p {
         margin-left: 0;
         text-align: left;
@@ -78,7 +78,7 @@ export const ContactCard = styled.a`
 
   @media (min-width: ${theme.breakpoints.desktop}) {
      max-width: 600px;
-     
+
      svg {
         width: 4rem;
         height: 4rem;

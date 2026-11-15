@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import theme from '../../utils/theme';
 
 export const PageWrapper = styled.div`
@@ -8,10 +8,22 @@ export const PageWrapper = styled.div`
   font-family: 'Roboto', sans-serif;
 `;
 
+const logoPulse = keyframes`
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+`;
+
+const heroFadeIn = keyframes`
+  from { opacity: 0; transform: scale(0.9) translateY(-8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+`;
+
 /* ── Hero ─────────────────────────────────────────────────────────────── */
 export const HeroSection = styled.section`
   width: 100%;
   min-height: 92vh;
+  /* iOS Safari: 100vh counts browser chrome; svh targets small viewport (address bar visible) */
+  min-height: 92svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,13 +84,8 @@ export const HeroLogoWrapper = styled.div`
     pointer-events: none;
 
     @media (prefers-reduced-motion: no-preference) {
-      animation: logoPulse 3.2s ease-in-out infinite;
+      animation: ${logoPulse} 3.2s ease-in-out infinite;
     }
-  }
-
-  @keyframes logoPulse {
-    0%, 100% { opacity: 0.75; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.06); }
   }
 `;
 
@@ -94,12 +101,7 @@ export const HeroLogo = styled.img`
     drop-shadow(0 0 6rem rgba(0, 232, 255, 0.12));
 
   @media (prefers-reduced-motion: no-preference) {
-    animation: heroFadeIn 0.7s ease-out;
-  }
-
-  @keyframes heroFadeIn {
-    from { opacity: 0; transform: scale(0.9) translateY(-8px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
+    animation: ${heroFadeIn} 0.7s ease-out;
   }
 `;
 
@@ -108,7 +110,7 @@ export const HeroOrgName = styled.p`
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #00e8ff;
+  color: ${theme.colors.primary};
   margin: 0 0 1.5rem;
   text-shadow: 0 0 1.5rem rgba(0, 232, 255, 0.5);
 `;
@@ -149,7 +151,7 @@ export const PrimaryBtn = styled.button`
   align-items: center;
   gap: 0.6rem;
   background: ${theme.colors.primary};
-  color: #000;
+  color: ${theme.colors.ink};
   border: none;
   border-radius: 2rem;
   padding: 0.9rem 2rem;
@@ -164,7 +166,7 @@ export const PrimaryBtn = styled.button`
   }
 
   &:hover {
-    background: #00c8db;
+    background: ${theme.colors.primaryDark};
     transform: translateY(-1px);
   }
 
@@ -198,7 +200,7 @@ export const SecondaryBtn = styled.a`
   }
 
   &:focus-visible {
-    outline: 3px solid #00e8ff;
+    outline: 3px solid ${theme.colors.primary};
     outline-offset: 3px;
   }
 `;
@@ -209,7 +211,7 @@ export const CopyFeedback = styled.span`
   left: 50%;
   transform: translateX(-50%);
   background: #000;
-  color: #00e8ff;
+  color: ${theme.colors.primary};
   font-size: 0.8rem;
   font-weight: 500;
   padding: 0.3rem 0.7rem;
@@ -234,7 +236,7 @@ export const TrustItem = styled.span`
   gap: 0.4rem;
   font-weight: 700;
   font-size: 0.9rem;
-  color: #000;
+  color: ${theme.colors.ink};
 
   svg {
     font-size: 1rem;
@@ -247,7 +249,7 @@ interface SectionProps {
 }
 export const Section = styled.section<SectionProps>`
   padding: 3.5rem 1.5rem;
-  background: ${({ $alt }) => ($alt ? '#f4f8fa' : '#fff')};
+  background: ${({ $alt }) => ($alt ? theme.colors.surfaceTint : theme.colors.surface)};
 
   @media (min-width: ${theme.breakpoints.tablet}) {
     padding: 4rem 3rem;
@@ -266,7 +268,7 @@ export const SectionTitle = styled.h2<TitleProps>`
   font-size: clamp(1.4rem, 4vw, 2rem);
   font-weight: 700;
   margin: 0 0 1.5rem;
-  color: ${({ $light }) => ($light ? '#fff' : '#1a1a2e')};
+  color: ${({ $light }) => ($light ? theme.colors.whiteText : theme.colors.ink)};
 `;
 
 /* ── Donation cards ─────────────────────────────────────────────────────── */
@@ -287,7 +289,7 @@ export const DonationGrid = styled.div`
 `;
 
 export const DonationCard = styled.div`
-  background: #fff;
+  background: ${theme.colors.surface};
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
@@ -295,7 +297,7 @@ export const DonationCard = styled.div`
 
   svg {
     font-size: 2rem;
-    color: ${theme.colors.primary};
+    color: ${theme.colors.primaryText};
     margin-bottom: 0.8rem;
   }
 
@@ -327,7 +329,7 @@ export const StepsGrid = styled.div`
 `;
 
 export const StepCard = styled.div`
-  background: #fff;
+  background: ${theme.colors.surface};
   border-radius: 1rem;
   padding: 2rem 1.5rem;
   text-align: center;
@@ -352,7 +354,7 @@ export const StepNumber = styled.div`
   height: 3rem;
   border-radius: 50%;
   background: ${theme.colors.primary};
-  color: #000;
+  color: ${theme.colors.ink};
   font-weight: 700;
   font-size: 1.3rem;
   display: flex;
@@ -382,7 +384,13 @@ export const GalleryItem = styled.div`
   border-radius: 0.5rem;
   overflow: hidden;
   cursor: pointer;
-  aspect-ratio: 4 / 3;
+  position: relative;
+  /* iOS Safari < 15 fallback */
+  padding-top: 75%;
+  @supports (aspect-ratio: 1) {
+    padding-top: 0;
+    aspect-ratio: 4 / 3;
+  }
 
   &:focus-visible {
     outline: 3px solid ${theme.colors.primary};
@@ -395,6 +403,8 @@ export const GalleryItem = styled.div`
 `;
 
 export const GalleryImg = styled.img`
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -504,7 +514,7 @@ export const VideoWrapper = styled.div`
 
 /* ── Contacts section ───────────────────────────────────────────────────── */
 export const ContactsSection = styled.section`
-  background: #1a1a2e;
+  background: ${theme.colors.ink};
   padding: 3rem 1.5rem;
   text-align: center;
 
@@ -522,7 +532,7 @@ export const ContactLink = styled.a`
   align-items: center;
   gap: 0.5rem;
   background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  color: ${theme.colors.whiteText};
   text-decoration: none;
   padding: 0.7rem 1.4rem;
   border-radius: 2rem;

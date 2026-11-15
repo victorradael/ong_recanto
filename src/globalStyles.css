@@ -1,14 +1,26 @@
+html {
+  /* Prevents Safari from applying dark-mode overrides on form controls and browser chrome */
+  color-scheme: light;
+  /* Overscroll areas in iOS Safari show html background; match the nav/footer color */
+  background-color: #00E8FF;
+  /* Needed alongside body min-height: -webkit-fill-available */
+  height: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  /* iOS Safari: 100vh includes the browser chrome; this fills the actual visible area */
+  min-height: -webkit-fill-available;
 }
 
 /* Works on Firefox */
 * {
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: #ff5fa0 #00e8ff;
+  scrollbar-color: #FF5FA0 #00E8FF; /* accent on primary */
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -17,11 +29,11 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: #00e8ff;
+  background: #00E8FF; /* primary */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #ff5fa0;
+  background-color: #FF5FA0; /* accent */
   border-radius: 20px;
-  border: 3px solid #00e8ff;
+  border: 3px solid #00E8FF; /* primary */
 }
