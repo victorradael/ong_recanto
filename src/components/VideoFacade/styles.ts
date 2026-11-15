@@ -4,7 +4,12 @@ import theme from '../../utils/theme';
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* iOS Safari < 15 fallback: padding-top gives 16:9 height from width */
+  padding-top: 56.25%;
+  @supports (aspect-ratio: 1) {
+    padding-top: 0;
+    aspect-ratio: 16 / 9;
+  }
   background: #000;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -22,6 +27,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Thumbnail = styled.img`
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -47,6 +54,8 @@ export const PlayButton = styled.div`
 `;
 
 export const Frame = styled.iframe`
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: none;

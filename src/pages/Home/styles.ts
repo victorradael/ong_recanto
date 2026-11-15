@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import theme from '../../utils/theme';
 
 export const PageWrapper = styled.div`
@@ -8,10 +8,22 @@ export const PageWrapper = styled.div`
   font-family: 'Roboto', sans-serif;
 `;
 
+const logoPulse = keyframes`
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+`;
+
+const heroFadeIn = keyframes`
+  from { opacity: 0; transform: scale(0.9) translateY(-8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+`;
+
 /* ── Hero ─────────────────────────────────────────────────────────────── */
 export const HeroSection = styled.section`
   width: 100%;
   min-height: 92vh;
+  /* iOS Safari: 100vh counts browser chrome; svh targets small viewport (address bar visible) */
+  min-height: 92svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,13 +84,8 @@ export const HeroLogoWrapper = styled.div`
     pointer-events: none;
 
     @media (prefers-reduced-motion: no-preference) {
-      animation: logoPulse 3.2s ease-in-out infinite;
+      animation: ${logoPulse} 3.2s ease-in-out infinite;
     }
-  }
-
-  @keyframes logoPulse {
-    0%, 100% { opacity: 0.75; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.06); }
   }
 `;
 
@@ -94,12 +101,7 @@ export const HeroLogo = styled.img`
     drop-shadow(0 0 6rem rgba(0, 232, 255, 0.12));
 
   @media (prefers-reduced-motion: no-preference) {
-    animation: heroFadeIn 0.7s ease-out;
-  }
-
-  @keyframes heroFadeIn {
-    from { opacity: 0; transform: scale(0.9) translateY(-8px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
+    animation: ${heroFadeIn} 0.7s ease-out;
   }
 `;
 
@@ -382,7 +384,13 @@ export const GalleryItem = styled.div`
   border-radius: 0.5rem;
   overflow: hidden;
   cursor: pointer;
-  aspect-ratio: 4 / 3;
+  position: relative;
+  /* iOS Safari < 15 fallback */
+  padding-top: 75%;
+  @supports (aspect-ratio: 1) {
+    padding-top: 0;
+    aspect-ratio: 4 / 3;
+  }
 
   &:focus-visible {
     outline: 3px solid ${theme.colors.primary};
@@ -395,6 +403,8 @@ export const GalleryItem = styled.div`
 `;
 
 export const GalleryImg = styled.img`
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;

@@ -1,7 +1,19 @@
+html {
+  /* Prevents Safari from applying dark-mode overrides on form controls and browser chrome */
+  color-scheme: light;
+  /* Overscroll areas in iOS Safari show html background; match the nav/footer color */
+  background-color: #00E8FF;
+  /* Needed alongside body min-height: -webkit-fill-available */
+  height: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  /* iOS Safari: 100vh includes the browser chrome; this fills the actual visible area */
+  min-height: -webkit-fill-available;
 }
 
 /* Works on Firefox */

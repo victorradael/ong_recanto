@@ -9,9 +9,10 @@ export const Container = styled.footer`
   align-items: center;
   width: 100%;
   padding: 2rem 0;
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
 
   @media (min-width: ${theme.breakpoints.tablet}) {
-     padding: 4rem 0 0.3rem 0;
+    padding: 4rem 0 max(0.3rem, env(safe-area-inset-bottom));
   }
 `;
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import theme from '../../utils/theme';
 import {
   FaInstagram,
   FaFacebookSquare,
@@ -242,7 +243,7 @@ const Home: React.FC = () => {
           </StepCard>
         </StepsGrid>
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-          <Link to="/ajudar" style={{ color: '#00E8FF', fontWeight: 700, fontSize: '1.1rem' }}>
+          <Link to="/ajudar" style={{ color: theme.colors.primaryText, fontWeight: 700, fontSize: '1.1rem' }}>
             Ver todas as formas de ajudar →
           </Link>
         </div>
@@ -297,7 +298,7 @@ const Home: React.FC = () => {
           />
         </VideoWrapper>
         <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-          <Link to="/sobre" style={{ color: '#00E8FF', fontWeight: 700 }}>
+          <Link to="/sobre" style={{ color: theme.colors.primaryText, fontWeight: 700 }}>
             Ver todos os apoiadores →
           </Link>
         </div>
